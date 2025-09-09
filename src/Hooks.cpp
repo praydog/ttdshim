@@ -47,9 +47,16 @@ public:
         return m_name;
     }
 
+    bool trigger_called() {
+        bool prev = m_called;
+        m_called = true;
+        return prev;
+    }
+
 private:
     safetyhook::MidHook m_hook{};
     std::string m_name{};
+    bool m_called{false};
 };
 
 std::vector<std::unique_ptr<MidHooker>> g_mid_hooks{};
@@ -79,7 +86,7 @@ void initialize(void* original_dll) {
             continue;
         }
 
-        if (!name.contains("POPF")) {
+        if (!name.contains("REALIZEFLAGS") && !name.contains("VIRTUALIZEFLAGS")) {
             continue;
         }
 
@@ -130,7 +137,10 @@ void initialize(void* original_dll) {
         auto mid_hooker = std::make_unique<MidHooker>(
             (void*)absolute,
             (void*)+[](safetyhook::Context& ctx, MidHooker& self) {
-                spdlog::info("In hook for function: {} at {:p}", self.name(), (void*)ctx.rip);
+                //if (!self.trigger_called()) {
+                    spdlog::info("First time in hook for function: {} at {:p}", self.name(), (void*)ctx.rip);
+                //}
+
                 __nop();
             },
             name);
