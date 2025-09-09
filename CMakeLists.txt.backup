@@ -1,0 +1,44 @@
+cmake_minimum_required(VERSION 3.20)
+project(ttdshim VERSION 1.0.0 LANGUAGES CXX)
+
+# Set C++ standard
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# Configure for Windows DLL
+if(WIN32)
+    set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
+endif()
+
+# Create the shared library (DLL)
+add_library(ttdshim SHARED
+    Main.cpp
+    ttdshim.def
+)
+
+# Set output name
+set_target_properties(ttdshim PROPERTIES
+    OUTPUT_NAME "ttdshim"
+    PREFIX ""
+    SUFFIX ".dll"
+)
+
+# Link required Windows libraries
+target_link_libraries(ttdshim
+    kernel32
+    user32
+)
+
+# Set compiler-specific options
+if(MSVC)
+    target_compile_options(ttdshim PRIVATE /W3)
+else()
+    target_compile_options(ttdshim PRIVATE -Wall -Wextra)
+endif()
+
+# Install targets
+install(TARGETS ttdshim
+    RUNTIME DESTINATION bin
+    LIBRARY DESTINATION lib
+    ARCHIVE DESTINATION lib
+)

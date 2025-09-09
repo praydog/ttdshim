@@ -1,0 +1,55 @@
+# Reference: https://build-cpp.github.io/cmkr/cmake-toml
+# to build:
+# > cmake -B build
+# > cmake --build build --config Release
+
+[project]
+name = "ttdshim"
+version = "1.0.0"
+languages = ["CXX"]
+cmake-before = """
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(KANANLIB_USE_DIA_SDK ON "" CACHE BOOL "" FORCE)
+
+# Configure for Windows DLL
+if(WIN32)
+    set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
+endif()
+"""
+
+[fetch-content.spdlog]
+git = "https://github.com/gabime/spdlog"
+tag = "v1.12.0"
+shallow = true
+
+[fetch-content.bddisasm]
+git = "https://github.com/bitdefender/bddisasm"
+tag = "70db095765ab2066dd88dfb7bbcc42259ed167c5"
+
+[fetch-content.kananlib]
+git = "https://github.com/cursey/kananlib"
+tag = "main"
+
+[fetch-content.safetyhook]
+git = "https://github.com/praydog/safetyhook"
+tag = "b62c7356f3e364209a2ae14489550156d7b58b8b"
+cmake-before="""
+set(SAFETYHOOK_FETCH_ZYDIS ON)
+"""
+
+[fetch-content.xbyak]
+git = "https://github.com/herumi/xbyak"
+tag = "v7.30"
+shallow = true
+
+[target.ttdshim]
+type = "shared"
+sources = ["src/*.cpp", "src/*.hpp", "ttdshim.def"]
+link-libraries = ["kananlib", "safetyhook", "xbyak", "urlmon"]
+compile-options = ["/W3"]
+
+[target.ttdshim.properties]
+OUTPUT_NAME = "ttdshim"
+PREFIX = ""
+SUFFIX = ".dll"
