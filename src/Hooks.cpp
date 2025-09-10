@@ -1,8 +1,10 @@
+#include <iostream>
 #include <memory>
 #include <spdlog/spdlog.h>
 #include <intrin.h>
 
 #include <Windows.h>
+#include <TlHelp32.h>
 
 #include <safetyhook.hpp>
 #include <xbyak/xbyak.h>
@@ -14,6 +16,8 @@
 #include "InstructionInstrumentation.hpp"
 
 #include "Hooks.hpp"
+
+HMODULE g_hOriginalDLL = nullptr;
 
 typedef struct _PROCESS_INSTRUMENTATION_CALLBACK_INFORMATION
 {
@@ -57,6 +61,9 @@ void* before_syscall(TTD::ThreadInfo* thread_info, void* variant) {
 
     if (thread_info != nullptr) {
         auto syscall_index = thread_info->get_register_value<uint64_t>(TTD::Rax);
+
+        //spdlog::info("Syscall index: {}", syscall_index);
+        std::cout << fmt::format("Syscall index: {}\n", syscall_index);
 
         // NtSetInformationProcess
         if (syscall_index == 28) {
@@ -120,6 +127,69 @@ LONG __stdcall nt_set_information_thread_hook(
     return g_state->nt_set_information_thread_hook.call<LONG>(ThreadHandle, ThreadInformationClass, ThreadInformation, ThreadInformationLength);
 }
 
+safetyhook::MidHook g_decoder_hook{};
+safetyhook::MidHook g_decode_instruction_hook{};
+
+void decoder_hook(safetyhook::Context& ctx) {
+    auto ti = TTD::ThreadInfo::get();
+    auto rip = ti->get_register_value<uint64_t>(TTD::Rip);
+    //std::cout << fmt::format("In decoder_hook! RIP: {:X}\n", rip);
+
+    if (*(uint8_t*)rip == 0x41 && *(uint8_t*)(rip + 1) == 0x90) {
+        auto rax = ctx.rax;
+        auto rdi = ctx.rdi;
+        auto edi = rdi & 0xFFFFFFFF;
+        std::cout << fmt::format("Found xchg eax, r8d! RAX: {:X}, EDI: {:X}\n", rax, edi);
+        ctx.rax = ttd::instrumentation::g_hook_XCHG.target_address();
+        MessageBoxA(NULL, "Found xchg eax, r8d", "Info", MB_OK);
+
+        //ti->realize_guest_machine_state(-1);
+
+        //auto vcpu_eax = ti->get_register_value<uint64_t>(TTD::Rax) & 0xFFFFFFFF;
+        //auto vcpu_r8d = ti->get_register_value<uint64_t>(TTD::R8) & 0xFFFFFFFF;
+
+        //std::cout << fmt::format("Before swap: VCPU EAX: {:X}, VCPU R8D: {:X}\n", vcpu_eax, vcpu_r8d);
+
+        // swap the two manually
+        //ti->set_register_value<uint64_t>(TTD::Rax, vcpu_r8d);
+        //ti->set_register_value<uint64_t>(TTD::R8, vcpu_eax);
+
+        //auto new_vcpu_eax = ti->get_register_value<uint64_t>(TTD::Rax) & 0xFFFFFFFF;
+        //auto new_vcpu_r8d = ti->get_register_value<uint64_t>(TTD::R8) & 0xFFFFFFFF;
+
+        //std::cout << fmt::format("After swap: VCPU EAX: {:X}, VCPU R8D: {:X}\n", new_vcpu_eax, new_vcpu_r8d);
+
+        //ti->virtualize_guest_machine_state(-1);
+
+        MessageBoxA(NULL, "Found xchg eax, r8d", "Info", MB_OK);
+    }
+}
+
+const uint8_t fake_shit[] = {
+    0x41, 0x91
+};
+
+void decode_instruction_hook(safetyhook::Context& ctx) {
+    auto ti = TTD::ThreadInfo::get();
+    auto rip = ti->get_register_value<uint64_t>(TTD::Rip);
+    std::cout << fmt::format("In decode_instruction_hook! RIP: {:X}\n", rip);
+
+    if (*(uint8_t*)rip == 0x41 && *(uint8_t*)(rip + 1) == 0x90) {
+        auto rax = ctx.rax;
+        auto rbx = ctx.rbx;
+        auto rdi = ctx.rdi;
+        auto edi = rdi & 0xFFFFFFFF;
+        std::cout << fmt::format("[decode instruction hook] Found xchg eax, r8d! RAX: {:X}, EDI: {:X}, RBX: {:X}\n", rax, edi, rbx);
+
+        MessageBoxA(NULL, "[decode instruction] Found xchg eax, r8d", "Info", MB_OK);
+
+        auto& insn = *(uintptr_t*)(ctx.rcx + 0x8);
+        insn = (uintptr_t)fake_shit;
+
+        //ctx.rax = (uintptr_t)g_hOriginalDLL + 0x92470;
+    }
+}
+
 void initialize(void* original_dll) {
     if (initialized) {
         return;
@@ -139,12 +209,14 @@ void initialize(void* original_dll) {
                     (void*)((uintptr_t)ntdll + rva),
                     (void*)nt_set_information_process_hook);
             }
+
             if (name == "NtSetInformationThread") {
                 spdlog::info("Hooking NtSetInformationThread at RVA {:x}", rva);
                 g_state->nt_set_information_thread_hook = safetyhook::create_inline(
                     (void*)((uintptr_t)ntdll + rva),
                     (void*)nt_set_information_thread_hook);
             }
+
             if (name.contains("RtlDispatchException")) {
                 MessageBoxA(NULL, "Setting RtlDispatchException hook", "Info", MB_OK);
                 spdlog::info("Hooking RtlDispatchException at RVA {:x}", rva);
@@ -201,7 +273,7 @@ void initialize(void* original_dll) {
             decoders.push_back({fn_name, name});
         }
 
-        if (name.contains("GetRegister")) {
+        if (name.contains("VirtualizeGuestMachineState")) {
             std::printf(std::format("Found {} at {:x}\n", name, (uintptr_t)original_dll + rva).c_str());
             continue;
         }
@@ -384,6 +456,16 @@ void initialize(void* original_dll) {
 #endif
 
     ttd::instrumentation::install(g_state->inverse_symbol_map);
+
+    g_decoder_hook = safetyhook::create_mid(
+        (void*)((uintptr_t)original_dll + 0x20B85),
+        decoder_hook
+    );
+
+    g_decode_instruction_hook = safetyhook::create_mid(
+        (void*)((uintptr_t)original_dll + 0x8C88C),
+        decode_instruction_hook
+    );
 
     // make entire binary RWX because we're hackers
     DWORD old_protect;

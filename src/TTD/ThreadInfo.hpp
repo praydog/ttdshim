@@ -106,6 +106,8 @@ struct ThreadInfo {
     static ThreadInfo* get(void* regs = nullptr);
     void* get_register(RegisterId id, void* out, size_t size);
     void* set_register(RegisterId id, const void* value, size_t size);
+    void virtualize_guest_machine_state(uint32_t regs_mask);
+    void realize_guest_machine_state(uint32_t regs_mask);
 
     template<typename T>
     T get_register_value(RegisterId id) {

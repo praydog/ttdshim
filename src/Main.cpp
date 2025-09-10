@@ -7,9 +7,6 @@
 
 #include "Hooks.hpp"
 
-// Global handle to the original DLL
-static HMODULE g_hOriginalDLL = nullptr;
-
 // Function to load the original TTDRecordCPU.dll
 HMODULE LoadOriginalDLL()
 {
