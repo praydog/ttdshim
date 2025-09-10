@@ -2,12 +2,21 @@
 #include <spdlog/spdlog.h>
 #include <intrin.h>
 
+#include <Windows.h>
+
 #include <safetyhook.hpp>
 #include <xbyak/xbyak.h>
 #include <utility/PDB.hpp>
 #include <utility/Scan.hpp>
 
 #include "Hooks.hpp"
+
+typedef struct _PROCESS_INSTRUMENTATION_CALLBACK_INFORMATION
+{
+    ULONG Version;
+    ULONG Reserved;
+    PVOID Callback;
+} PROCESS_INSTRUMENTATION_CALLBACK_INFORMATION, *PPROCESS_INSTRUMENTATION_CALLBACK_INFORMATION;
 
 namespace ttd::hooks {
 bool initialized = false;
@@ -62,6 +71,29 @@ private:
 std::vector<std::unique_ptr<MidHooker>> g_mid_hooks{};
 safetyhook::InlineHook g_realize_flags_hook{};
 safetyhook::InlineHook g_virtualize_flags_hook{};
+safetyhook::InlineHook g_unhandled_exception_filter_hook{};
+safetyhook::InlineHook g_rtl_dispatch_exception_hook{};
+safetyhook::InlineHook g_nt_set_information_process_hook{};
+safetyhook::InlineHook g_nt_set_information_thread_hook{};
+safetyhook::InlineHook g_before_syscall_hook{};
+
+struct ttd_regs_t {
+    uint64_t &rip() {return *(uint64_t*)((uintptr_t)this + 0x68); }
+    uint64_t &teb() {return *(uint64_t*)((uintptr_t)this + 0x70); }
+};
+
+struct ttd_thread_info_t {
+
+    ttd_regs_t* regs() {
+        return (ttd_regs_t*)((uintptr_t)this + 0x48);
+    }
+
+};
+
+uint64_t before_syscall(ttd_thread_info_t* thread_info, uint64_t a2) {
+    spdlog::info("before_syscall called with a2: {:X}", a2);
+    return g_before_syscall_hook.call<uint64_t>(thread_info, a2);
+}
 
 void* realize_flags(uintptr_t rcx, uintptr_t rdx) {
     const auto idx = *(uint8_t*)(rdx + 0x13);
@@ -89,12 +121,89 @@ void* virtualize_flags(uintptr_t rcx, uintptr_t rdx) {
     return result;
 }
 
+void __stdcall rtl_dispatch_exception(PEXCEPTION_RECORD ExceptionRecord, PCONTEXT ContextRecord) {
+    uintptr_t ip = ContextRecord->Rip;
+
+    //MessageBoxA(NULL, "Caught exception in RtlDispatchException", "Info", MB_OK);
+
+    // If we are pointing to an int 3, and the next three bytes are 0xBA 0xBE 0xEF, we need to increment the ip by 4 and update exception address, otherwise do nothing
+    if (*(uint8_t*)ip == 0xCC && *(uint8_t*)(ip + 1) == 0xBA && *(uint8_t*)(ip + 2) == 0xBE && *(uint8_t*)(ip + 3) == 0x90) {
+        ContextRecord->Rip += 3;
+        ExceptionRecord->ExceptionAddress = (PVOID)ContextRecord->Rip;
+        spdlog::info("Skipping int 3 in RtlDispatchException at address: {:X}", ip);
+    } else {
+        spdlog::info("Unhandled exception in RtlDispatchException at address: {:X}", ip);
+    }
+
+    // call the original function
+    g_rtl_dispatch_exception_hook.call<decltype(&rtl_dispatch_exception)>(ExceptionRecord, ContextRecord);
+}
+
+LONG __stdcall nt_set_information_process_hook(
+    HANDLE ProcessHandle,
+    int ProcessInformationClass,
+    PVOID ProcessInformation,
+    ULONG ProcessInformationLength
+) {
+    if (ProcessInformationClass == 40) {
+        auto info = (PPROCESS_INSTRUMENTATION_CALLBACK_INFORMATION)ProcessInformation;
+        if (info->Callback == NULL) {
+            spdlog::info("Blocking ProcessInstrumentationCallback with NULL callback");
+            return 0; // STATUS_SUCCESS
+        }
+    }
+    return g_nt_set_information_process_hook.call<LONG>(ProcessHandle, ProcessInformationClass, ProcessInformation, ProcessInformationLength);
+}
+
+LONG __stdcall nt_set_information_thread_hook(
+    HANDLE ThreadHandle,
+    int ThreadInformationClass,
+    PVOID ThreadInformation,
+    ULONG ThreadInformationLength
+) {
+    if (ThreadInformationClass == 17) { // ThreadHideFromDebugger
+        spdlog::info("Blocking ThreadHideFromDebugger");
+        return 0; // STATUS_SUCCESS
+    }
+    return g_nt_set_information_thread_hook.call<LONG>(ThreadHandle, ThreadInformationClass, ThreadInformation, ThreadInformationLength);
+}
+
 void initialize(void* original_dll) {
     if (initialized) {
         return;
     }
 
     initialized = true;
+
+    // Hook RtlDispatchException from ntdll
+    auto ntdll = GetModuleHandleA("ntdll.dll");
+    if (ntdll) {
+        auto ntdll_symbols = utility::pdb::get_symbol_map((uint8_t*)ntdll);
+        for (const auto [rva, name] : ntdll_symbols) {
+            if (name == "NtSetInformationProcess") {
+                spdlog::info("Hooking NtSetInformationProcess at RVA {:x}", rva);
+                g_nt_set_information_process_hook = safetyhook::create_inline(
+                    (void*)((uintptr_t)ntdll + rva),
+                    (void*)nt_set_information_process_hook);
+            }
+            if (name == "NtSetInformationThread") {
+                spdlog::info("Hooking NtSetInformationThread at RVA {:x}", rva);
+                g_nt_set_information_thread_hook = safetyhook::create_inline(
+                    (void*)((uintptr_t)ntdll + rva),
+                    (void*)nt_set_information_thread_hook);
+            }
+            if (name.contains("RtlDispatchException")) {
+                MessageBoxA(NULL, "Setting RtlDispatchException hook", "Info", MB_OK);
+                spdlog::info("Hooking RtlDispatchException at RVA {:x}", rva);
+                g_rtl_dispatch_exception_hook = safetyhook::create_inline(
+                    (void*)((uintptr_t)ntdll + rva),
+                    (void*)rtl_dispatch_exception);
+                break;
+            }
+        }
+    }
+
+    // Note: RunSyscall is available in the original DLL's symbol map; mid-hook it from there
 
     auto symbols = utility::pdb::get_symbol_map((uint8_t*)original_dll);
 
@@ -114,27 +223,51 @@ void initialize(void* original_dll) {
             continue;
         }
 
-        if (!name.contains("REALIZEFLAGS") && !name.contains("VIRTUALIZEFLAGS") && !name.contains("Trap")) {
+        if (!name.contains("REALIZEFLAGS") && !name.contains("VIRTUALIZEFLAGS") && !name.contains("Trap") && !name.contains("UnhandledExceptionFilter") && !name.contains("RunSyscall") && !name.starts_with("TTD::")) {
             continue;
         }
 
-        if (name.contains("REALIZEFLAGS")) {
-            g_realize_flags_hook = safetyhook::create_inline(
+        /* if (name == "UnhandledExceptionFilter") {
+            MessageBoxA(NULL, "Setting UnhandledExceptionFilter hook", "Info", MB_OK);
+            spdlog::info("Hooking UnhandledExceptionFilter at RVA {:x}", rva);
+            g_unhandled_exception_filter_hook = safetyhook::create_inline(
                 (void*)((uintptr_t)original_dll + rva),
-                (void*)realize_flags);
+                (void*)unhandled_exception_filter);
+            continue;
+        } */
+
+        if (name.contains("REALIZEFLAGS")) {
+           /*  g_realize_flags_hook = safetyhook::create_inline(
+                (void*)((uintptr_t)original_dll + rva),
+                (void*)realize_flags); */
 
             continue;
         }
 
         if (name.contains("VIRTUALIZEFLAGS")) {
-            g_virtualize_flags_hook = safetyhook::create_inline(
+           /*  g_virtualize_flags_hook = safetyhook::create_inline(
                 (void*)((uintptr_t)original_dll + rva),
-                (void*)virtualize_flags);
+                (void*)virtualize_flags); */
             
             continue;
         }
 
         const auto absolute = (uint8_t*)original_dll + rva;
+
+        // Install a mid-hook on RunSyscall to log registers
+        if (name.contains("RunSyscall")) {
+            spdlog::info("Setting mid-hook for RunSyscall at {:x}", (uintptr_t)absolute);
+            auto mid_hooker = std::make_unique<MidHooker>(
+                (void*)absolute,
+                (void*)+[](safetyhook::Context& ctx, MidHooker& self) {
+                    spdlog::info(
+                        "RunSyscall rcx={:p} rdx={:p} r8={:p} r9={:p}",
+                        (void*)ctx.rcx, (void*)ctx.rdx, (void*)ctx.r8, (void*)ctx.r9);
+                },
+                name);
+            g_mid_hooks.push_back(std::move(mid_hooker));
+            continue;
+        }
         // check if 0xCC precedes (means it's definitely a function)
         if (*(uint8_t*)(absolute - 1) != 0xCC) {
             continue;
@@ -145,7 +278,7 @@ void initialize(void* original_dll) {
             spdlog::warn("Skipping function: {} at {:x} (starts with {:x})", name, (uintptr_t)absolute, *absolute);
             continue;
         }
-
+/* 
         // disasm first nad make sure first instruction is not rip relative immediately
         const auto disasm = utility::decode_one(absolute);
 
@@ -202,7 +335,7 @@ void initialize(void* original_dll) {
                 __nop();
             },
             name);
-        g_mid_hooks.push_back(std::move(mid_hooker));
+        g_mid_hooks.push_back(std::move(mid_hooker)); */
     } catch (const std::exception& e) {
         spdlog::error("Error hooking function {}: {}", name, e.what());
     } catch (...) {
