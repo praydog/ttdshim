@@ -41,13 +41,13 @@ HMODULE LoadOriginalDLL()
                 std::wstring new_name = ldr_entry->FullDllName.Buffer;
                 new_name = new_name.substr(0, new_name.find_last_of(L"_")) + L".dll";
                 ldr_entry->FullDllName.Length = (USHORT)(new_name.size() * sizeof(wchar_t));
-                //ldr_entry->BaseDllName.Length = (USHORT)(new_name.substr(new_name.find_last_of(L"\\/") + 1).size() * sizeof(wchar_t));
+
                 auto base_dll_name = &ldr_entry->FullDllName + 1;
                 std::wstring new_base_name = new_name.substr(new_name.find_last_of(L"\\/") + 1);
                 base_dll_name->Length = (USHORT)(new_base_name.size() * sizeof(wchar_t));
                 wcscpy_s(ldr_entry->FullDllName.Buffer, new_name.size() + 1, new_name.c_str());
-                //wcscpy_s(ldr_entry->BaseDllName.Buffer, (new_name.substr(new_name.find_last_of(L"\\/") + 1).size()) + 1, new_name.substr(new_name.find_last_of(L"\\/") + 1).c_str());
                 wcscpy_s(base_dll_name->Buffer, (new_base_name.size()) + 1, new_base_name.c_str());
+                
                 spdlog::info("Renamed module in PEB to: {}", utility::narrow(new_name));
                 spdlog::info("Renamed base module in PEB to: {}", utility::narrow(new_base_name));
             }

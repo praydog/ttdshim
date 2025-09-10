@@ -68,6 +68,7 @@ private:
     bool m_called{false};
 };
 
+std::unordered_map<std::string, uintptr_t> g_inverse_symbol_map{};
 std::vector<std::unique_ptr<MidHooker>> g_mid_hooks{};
 safetyhook::InlineHook g_realize_flags_hook{};
 safetyhook::InlineHook g_virtualize_flags_hook{};
@@ -75,25 +76,11 @@ safetyhook::InlineHook g_unhandled_exception_filter_hook{};
 safetyhook::InlineHook g_rtl_dispatch_exception_hook{};
 safetyhook::InlineHook g_nt_set_information_process_hook{};
 safetyhook::InlineHook g_nt_set_information_thread_hook{};
+safetyhook::InlineHook g_popf_hook{};
 safetyhook::InlineHook g_before_syscall_hook{};
 
-struct ttd_regs_t {
-    uint64_t &rip() {return *(uint64_t*)((uintptr_t)this + 0x68); }
-    uint64_t &teb() {return *(uint64_t*)((uintptr_t)this + 0x70); }
-};
-
-struct ttd_thread_info_t {
-
-    ttd_regs_t* regs() {
-        return (ttd_regs_t*)((uintptr_t)this + 0x48);
-    }
-
-};
-
-uint64_t before_syscall(ttd_thread_info_t* thread_info, uint64_t a2) {
-    spdlog::info("before_syscall called with a2: {:X}", a2);
-    return g_before_syscall_hook.call<uint64_t>(thread_info, a2);
-}
+using HandleFn = void* (*)(uintptr_t rcx, uintptr_t rdx);
+HandleFn g_handle_int3 = nullptr;
 
 void* realize_flags(uintptr_t rcx, uintptr_t rdx) {
     const auto idx = *(uint8_t*)(rdx + 0x13);
@@ -117,6 +104,105 @@ void* virtualize_flags(uintptr_t rcx, uintptr_t rdx) {
 
     auto result = g_virtualize_flags_hook.call<void*>(rcx, rdx);
     spdlog::info("virtualize_flags f1380 after call: {} ({:X})", f1380, f1380);
+
+    return result;
+}
+
+void* handle_popf(uintptr_t rcx, uintptr_t instruction) {
+    spdlog::info("handle_popf called");
+    return g_handle_int3(rcx, instruction);
+    //return g_popf_hook.call<void*>(rcx, instruction);
+}
+
+namespace TTD {
+/*
+
+00000048     DWORD64 Dr0;
+00000050     DWORD64 Dr1;
+00000058     DWORD64 Dr2;
+00000060     DWORD64 Dr3;
+00000068     DWORD64 Dr6;
+00000070     DWORD64 Dr7;
+00000078     DWORD64 Rax;
+00000080     DWORD64 Rcx;                        // XREF: __report_gsfailure+BC/w
+00000088     DWORD64 Rdx;
+00000090     DWORD64 Rbx;
+00000098     DWORD64 Rsp;                        // XREF: _invalid_parameter+92/w
+00000098                                         // __report_gsfailure+9F/w ...
+000000A0     DWORD64 Rbp;
+000000A8     DWORD64 Rsi;
+000000B0     DWORD64 Rdi;
+000000B8     DWORD64 R8;
+000000C0     DWORD64 R9;
+000000C8     DWORD64 R10;
+000000D0     DWORD64 R11;
+000000D8     DWORD64 R12;
+000000E0     DWORD64 R13;
+000000E8     DWORD64 R14;
+000000F0     DWORD64 R15;
+*/
+
+enum RegisterId : uint8_t {
+    GprsBegin = 0,
+    Dr0 = 0,
+    Dr1 = 1,
+    Dr2 = 2,
+    Dr3 = 3,
+    Dr6 = 4,
+    Dr7 = 5,
+    Rax = 6,
+    Rcx = 7,
+    Rdx = 8,
+    Rbx = 9,
+    Rsp = 10,
+    Rbp = 11,
+    Rsi = 12,
+    Rdi = 13,
+    R8 = 14,
+    R9 = 15,
+    R10 = 16,
+    R11 = 17,
+    R12 = 18,
+    R13 = 19,
+    R14 = 20,
+    R15 = 21,
+    Rip = 22,
+    GprsLast = 22,
+    SegCs = 23,
+    SegDs = 24,
+    SegEs = 25,
+    SegFs = 26,
+    SegGs = 27,
+    SegSs = 28,
+    UnkSize8 = 29,
+    EFlags = 30,
+};
+
+struct ThreadInfo {
+    void* GetRegister(RegisterId id, void* out, size_t size) {
+        static auto it = g_inverse_symbol_map.find("public: virtual void __cdecl TTD::ThreadInfo::GetRegister(struct TTD::RegisterId,void * __ptr64,unsigned __int64)const __ptr64");
+
+        if (it == g_inverse_symbol_map.end()) {
+            spdlog::error("Failed to find GetRegister symbol");
+            return nullptr;
+        }
+
+        static auto fn = (void* (*)(ThreadInfo*, RegisterId, void*, size_t))(it->second);
+
+        return fn(this, id, out, size);
+    }
+};
+}
+
+void* before_syscall(TTD::ThreadInfo* thread_info, void* variant) {
+    spdlog::info("before_syscall called");
+    // dump all registers
+    for (int i = TTD::GprsBegin; i <= TTD::GprsLast; i++) {
+        uint64_t value = 0;
+        thread_info->GetRegister((TTD::RegisterId)i, &value, sizeof(value));
+        spdlog::info("Register {}: {:016X}", i, value);
+    }
+    auto result = g_before_syscall_hook.call<void*>(thread_info, variant);
 
     return result;
 }
@@ -212,6 +298,10 @@ void initialize(void* original_dll) {
         return;
     }
 
+    for (const auto& [addr, name] : symbols) {
+        g_inverse_symbol_map[name] = (uintptr_t)(addr + (uintptr_t)original_dll);
+    }
+
     std::unordered_set<std::string> ignored_functions {
         "public: __cdecl TTD::StlbEntry<32>::StlbEntry<32>(void) __ptr64",
         "free"
@@ -223,7 +313,31 @@ void initialize(void* original_dll) {
             continue;
         }
 
-        if (!name.contains("REALIZEFLAGS") && !name.contains("VIRTUALIZEFLAGS") && !name.contains("Trap") && !name.contains("UnhandledExceptionFilter") && !name.contains("RunSyscall") && !name.starts_with("TTD::")) {
+
+        if (name.contains("GetRegister")) {
+            std::printf(std::format("Found {} at {:x}\n", name, (uintptr_t)original_dll + rva).c_str());
+            continue;
+        }
+
+        if (name.contains("BeforeSyscall")) {
+            g_before_syscall_hook = safetyhook::create_inline(
+                (void*)((uintptr_t)original_dll + rva),
+                (void*)before_syscall);
+            spdlog::info("Hooked BeforeSyscall at {:x}", (uintptr_t)((uintptr_t)original_dll + rva));
+            continue;
+        }
+
+        if (name.contains("HandleINT")) {
+            g_handle_int3 = (HandleFn)((uintptr_t)original_dll + rva);
+            spdlog::info("Found HandleINT3 at {:x}", (uintptr_t)g_handle_int3);
+            continue;
+        }
+
+        if (name.contains("HandlePOPFD")) {
+            g_popf_hook = safetyhook::create_inline(
+                (void*)((uintptr_t)original_dll + rva),
+                (void*)handle_popf);
+            spdlog::info("Hooked HandlePOPF at {:x}", (uintptr_t)((uintptr_t)original_dll + rva));
             continue;
         }
 
@@ -249,6 +363,10 @@ void initialize(void* original_dll) {
                 (void*)((uintptr_t)original_dll + rva),
                 (void*)virtualize_flags); */
             
+            continue;
+        }
+
+        if (!name.contains("Syscall")) {
             continue;
         }
 
