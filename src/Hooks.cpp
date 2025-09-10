@@ -23,19 +23,27 @@ bool initialized = false;
 
 class MidHooker;
 
-std::unordered_map<std::string, uintptr_t> g_inverse_symbol_map{};
-std::vector<std::unique_ptr<MidHooker>> g_mid_hooks{};
-safetyhook::InlineHook g_realize_flags_hook{};
-safetyhook::InlineHook g_virtualize_flags_hook{};
-safetyhook::InlineHook g_unhandled_exception_filter_hook{};
-safetyhook::InlineHook g_rtl_dispatch_exception_hook{};
-safetyhook::InlineHook g_nt_set_information_process_hook{};
-safetyhook::InlineHook g_nt_set_information_thread_hook{};
-safetyhook::InlineHook g_popf_hook{};
-safetyhook::InlineHook g_before_syscall_hook{};
+struct State {
+    std::unordered_map<std::string, uintptr_t> g_inverse_symbol_map{};
+    std::vector<std::unique_ptr<MidHooker>> g_mid_hooks{};
+    safetyhook::InlineHook g_realize_flags_hook{};
+    safetyhook::InlineHook g_virtualize_flags_hook{};
+    safetyhook::InlineHook g_unhandled_exception_filter_hook{};
+    safetyhook::InlineHook g_rtl_dispatch_exception_hook{};
+    safetyhook::InlineHook g_nt_set_information_process_hook{};
+    safetyhook::InlineHook g_nt_set_information_thread_hook{};
+    safetyhook::InlineHook g_popf_hook{};
+    safetyhook::InlineHook g_before_syscall_hook{};
 
-using HandleFn = void* (*)(uintptr_t rcx, uintptr_t rdx);
-HandleFn g_handle_int3 = nullptr;
+    using HandleFn = void* (*)(uintptr_t rcx, uintptr_t rdx);
+    HandleFn g_handle_int3 = nullptr;
+
+    void* threadinfo_get_fn = nullptr;
+    void* threadinfo_get_reg_fn = nullptr;
+    void* threadinfo_set_reg_fn = nullptr;
+};
+
+std::unique_ptr<State> g_state{nullptr};
 
 namespace TTD {
 /*
@@ -137,32 +145,41 @@ static inline std::vector<std::string> register_names = {
 
 struct ThreadInfo {
     static ThreadInfo* get(void* regs = nullptr) {
-        static auto fn = (ThreadInfo* (*)(void*))g_inverse_symbol_map["public: static struct TTD::ThreadInfo * __ptr64 __cdecl TTD::ThreadInfo::GetOrCreateForCurrentThread(struct TTD::X64REGS const * __ptr64)"];
+        //static auto fn = (ThreadInfo* (*)(void*))g_state->g_inverse_symbol_map["public: static struct TTD::ThreadInfo * __ptr64 __cdecl TTD::ThreadInfo::GetOrCreateForCurrentThread(struct TTD::X64REGS const * __ptr64)"];
+        if (g_state->threadinfo_get_fn == nullptr) {
+            g_state->threadinfo_get_fn = (void*)g_state->g_inverse_symbol_map["public: static struct TTD::ThreadInfo * __ptr64 __cdecl TTD::ThreadInfo::GetOrCreateForCurrentThread(struct TTD::X64REGS const * __ptr64)"];
+        }
+
+        auto fn = (ThreadInfo* (*)(void*))(g_state->threadinfo_get_fn);
+        
         return fn(regs);
     }
 
     void* get_register(RegisterId id, void* out, size_t size) {
-        static auto it = g_inverse_symbol_map.find("public: virtual void __cdecl TTD::ThreadInfo::GetRegister(struct TTD::RegisterId,void * __ptr64,unsigned __int64)const __ptr64");
+        /*static auto it = g_state->g_inverse_symbol_map.find("public: virtual void __cdecl TTD::ThreadInfo::GetRegister(struct TTD::RegisterId,void * __ptr64,unsigned __int64)const __ptr64");
 
-        if (it == g_inverse_symbol_map.end()) {
+        if (it == g_state->g_inverse_symbol_map.end()) {
             spdlog::error("Failed to find GetRegister symbol");
             return nullptr;
+        }*/
+
+        if (g_state->threadinfo_get_reg_fn == nullptr) {
+            g_state->threadinfo_get_reg_fn = (void*)g_state->g_inverse_symbol_map["public: virtual void __cdecl TTD::ThreadInfo::GetRegister(struct TTD::RegisterId,void * __ptr64,unsigned __int64)const __ptr64"];
         }
 
-        static auto fn = (void* (*)(ThreadInfo*, RegisterId, void*, size_t))(it->second);
+        auto fn = (void* (*)(ThreadInfo*, RegisterId, void*, size_t))(g_state->threadinfo_get_reg_fn);
 
         return fn(this, id, out, size);
     }
 
     void* set_register(RegisterId id, const void* value, size_t size) {
-        static auto it = g_inverse_symbol_map.find("public: virtual void __cdecl TTD::ThreadInfo::SetRegister(struct TTD::RegisterId,void const * __ptr64,unsigned __int64) __ptr64");
+        //static auto it = g_state->g_inverse_symbol_map.find("public: virtual void __cdecl TTD::ThreadInfo::SetRegister(struct TTD::RegisterId,void const * __ptr64,unsigned __int64) __ptr64");
 
-        if (it == g_inverse_symbol_map.end()) {
-            spdlog::error("Failed to find SetRegister symbol");
-            return nullptr;
+        if (g_state->threadinfo_set_reg_fn == nullptr) {
+            g_state->threadinfo_set_reg_fn = (void*)g_state->g_inverse_symbol_map["public: virtual void __cdecl TTD::ThreadInfo::SetRegister(struct TTD::RegisterId,void const * __ptr64,unsigned __int64) __ptr64"];
         }
 
-        static auto fn = (void* (*)(ThreadInfo*, RegisterId, const void*, size_t))(it->second);
+        auto fn = (void* (*)(ThreadInfo*, RegisterId, const void*, size_t))(g_state->threadinfo_set_reg_fn);
 
         return fn(this, id, value, size);
     }
@@ -236,7 +253,7 @@ void* realize_flags(uintptr_t rcx, uintptr_t rdx) {
     spdlog::info("realize_flags f12d8: {} ({:X})", f12d8, f12d8);
     spdlog::info("realize_flags f1380: {} ({:X})", f1380, f1380);
 
-    auto result = g_virtualize_flags_hook.call<void*>(rcx, rdx);
+    auto result = g_state->g_virtualize_flags_hook.call<void*>(rcx, rdx);
     spdlog::info("realize_flags f1380 after call: {} ({:X})", f1380, f1380);
 
     return result;
@@ -248,7 +265,7 @@ void* virtualize_flags(uintptr_t rcx, uintptr_t rdx) {
     spdlog::info("virtualize_flags idx: {}", idx);
     spdlog::info("virtualize_flags f1380: {} ({:X})", f1380, f1380);
 
-    auto result = g_virtualize_flags_hook.call<void*>(rcx, rdx);
+    auto result = g_state->g_virtualize_flags_hook.call<void*>(rcx, rdx);
     spdlog::info("virtualize_flags f1380 after call: {} ({:X})", f1380, f1380);
 
     return result;
@@ -272,30 +289,36 @@ void* handle_popf(uintptr_t rcx, uintptr_t instruction) {
             //*(uint32_t*)(rsp) = eflags & ~0x100;
             // advance RSP to fix what POPF would have done
             //ti->set_register_value<uint64_t>(TTD::Rsp, rsp + 8);
-            return g_handle_int3(rcx, instruction);
+            return g_state->g_handle_int3(rcx, instruction);
         }
     }
 
-    return g_popf_hook.call<void*>(rcx, instruction);
+    return g_state->g_popf_hook.call<void*>(rcx, instruction);
 }
 
+#pragma optimize("", off)
 void* before_syscall(TTD::ThreadInfo* thread_info, void* variant) {
     //spdlog::info("before_syscall called");
 
-    auto syscall_index = thread_info->get_register_value<uint64_t>(TTD::Rax);
+    if (thread_info != nullptr) try {
+        auto syscall_index = thread_info->get_register_value<uint64_t>(TTD::Rax);
 
-    // NtSetInformationProcess
-    if (syscall_index == 28) {
-        // skip dat shiet
-        spdlog::info("Skipping NtSetInformationProcess syscall");
-        thread_info->set_register_value<uint64_t>(TTD::Rax, 0); // random syscall (NtAccessCheck, harmless)
-        //return nullptr;
+        // NtSetInformationProcess
+        if (syscall_index == 28) {
+            // skip dat shiet
+            //spdlog::info("Skipping NtSetInformationProcess syscall");
+            thread_info->set_register_value<uint64_t>(TTD::Rax, 0); // random syscall (NtAccessCheck, harmless)
+            //return nullptr;
+        }
+    } catch(...) {
+        MessageBoxA(nullptr, "something bad happen", "asfasf", 0);
     }
 
-    auto result = g_before_syscall_hook.call<void*>(thread_info, variant);
+    auto result = g_state->g_before_syscall_hook.unsafe_call<void*>(thread_info, variant);
 
     return result;
 }
+#pragma optimize("", on)
 
 void __stdcall rtl_dispatch_exception(PEXCEPTION_RECORD ExceptionRecord, PCONTEXT ContextRecord) {
     uintptr_t ip = ContextRecord->Rip;
@@ -315,7 +338,7 @@ void __stdcall rtl_dispatch_exception(PEXCEPTION_RECORD ExceptionRecord, PCONTEX
     }
 
     // call the original function
-    g_rtl_dispatch_exception_hook.call<decltype(&rtl_dispatch_exception)>(ExceptionRecord, ContextRecord);
+    g_state->g_rtl_dispatch_exception_hook.call<decltype(&rtl_dispatch_exception)>(ExceptionRecord, ContextRecord);
 }
 
 LONG __stdcall nt_set_information_process_hook(
@@ -331,7 +354,7 @@ LONG __stdcall nt_set_information_process_hook(
             return 0; // STATUS_SUCCESS
         }
     }
-    return g_nt_set_information_process_hook.call<LONG>(ProcessHandle, ProcessInformationClass, ProcessInformation, ProcessInformationLength);
+    return g_state->g_nt_set_information_process_hook.call<LONG>(ProcessHandle, ProcessInformationClass, ProcessInformation, ProcessInformationLength);
 }
 
 LONG __stdcall nt_set_information_thread_hook(
@@ -344,7 +367,7 @@ LONG __stdcall nt_set_information_thread_hook(
         spdlog::info("Blocking ThreadHideFromDebugger");
         return 0; // STATUS_SUCCESS
     }
-    return g_nt_set_information_thread_hook.call<LONG>(ThreadHandle, ThreadInformationClass, ThreadInformation, ThreadInformationLength);
+    return g_state->g_nt_set_information_thread_hook.call<LONG>(ThreadHandle, ThreadInformationClass, ThreadInformation, ThreadInformationLength);
 }
 
 void initialize(void* original_dll) {
@@ -352,6 +375,7 @@ void initialize(void* original_dll) {
         return;
     }
 
+    g_state = std::make_unique<State>();
     initialized = true;
 
     // Hook RtlDispatchException from ntdll
@@ -361,20 +385,20 @@ void initialize(void* original_dll) {
         for (const auto [rva, name] : ntdll_symbols) {
             if (name == "NtSetInformationProcess") {
                 spdlog::info("Hooking NtSetInformationProcess at RVA {:x}", rva);
-                g_nt_set_information_process_hook = safetyhook::create_inline(
+                g_state->g_nt_set_information_process_hook = safetyhook::create_inline(
                     (void*)((uintptr_t)ntdll + rva),
                     (void*)nt_set_information_process_hook);
             }
             if (name == "NtSetInformationThread") {
                 spdlog::info("Hooking NtSetInformationThread at RVA {:x}", rva);
-                g_nt_set_information_thread_hook = safetyhook::create_inline(
+                g_state->g_nt_set_information_thread_hook = safetyhook::create_inline(
                     (void*)((uintptr_t)ntdll + rva),
                     (void*)nt_set_information_thread_hook);
             }
             if (name.contains("RtlDispatchException")) {
                 MessageBoxA(NULL, "Setting RtlDispatchException hook", "Info", MB_OK);
                 spdlog::info("Hooking RtlDispatchException at RVA {:x}", rva);
-                g_rtl_dispatch_exception_hook = safetyhook::create_inline(
+                g_state->g_rtl_dispatch_exception_hook = safetyhook::create_inline(
                     (void*)((uintptr_t)ntdll + rva),
                     (void*)rtl_dispatch_exception);
                 break;
@@ -392,7 +416,7 @@ void initialize(void* original_dll) {
     }
 
     for (const auto& [addr, name] : symbols) {
-        g_inverse_symbol_map[name] = (uintptr_t)(addr + (uintptr_t)original_dll);
+        g_state->g_inverse_symbol_map[name] = (uintptr_t)(addr + (uintptr_t)original_dll);
     }
 
     std::unordered_set<std::string> ignored_functions {
@@ -418,21 +442,22 @@ void initialize(void* original_dll) {
         }
 
         if (name.contains("BeforeSyscall")) {
-            g_before_syscall_hook = safetyhook::create_inline(
+            g_state->g_before_syscall_hook = safetyhook::create_inline(
                 (void*)((uintptr_t)original_dll + rva),
                 (void*)before_syscall);
             spdlog::info("Hooked BeforeSyscall at {:x}", (uintptr_t)((uintptr_t)original_dll + rva));
+
             continue;
         }
 
         if (name.contains("HandleINT")) {
-            g_handle_int3 = (HandleFn)((uintptr_t)original_dll + rva);
-            spdlog::info("Found HandleINT3 at {:x}", (uintptr_t)g_handle_int3);
+            g_state->g_handle_int3 = (State::HandleFn)((uintptr_t)original_dll + rva);
+            spdlog::info("Found HandleINT3 at {:x}", (uintptr_t)g_state->g_handle_int3);
             continue;
         }
 
         if (name.contains("HandlePOPFD")) {
-            g_popf_hook = safetyhook::create_inline(
+            g_state->g_popf_hook = safetyhook::create_inline(
                 (void*)((uintptr_t)original_dll + rva),
                 (void*)handle_popf);
             spdlog::info("Hooked HandlePOPF at {:x}", (uintptr_t)((uintptr_t)original_dll + rva));
@@ -464,7 +489,7 @@ void initialize(void* original_dll) {
             continue;
         }
 
-        if (!name.contains("Syscall")) {
+        if (true) {
             continue;
         }
 
@@ -481,7 +506,7 @@ void initialize(void* original_dll) {
                         (void*)ctx.rcx, (void*)ctx.rdx, (void*)ctx.r8, (void*)ctx.r9);
                 },
                 name);
-            g_mid_hooks.push_back(std::move(mid_hooker));
+            g_state->g_mid_hooks.push_back(std::move(mid_hooker));
             continue;
         }
         // check if 0xCC precedes (means it's definitely a function)
@@ -557,5 +582,7 @@ void initialize(void* original_dll) {
     } catch (...) {
         spdlog::error("Unknown error hooking function {}", name);
     }
+
+    spdlog::info("Hooked funcs");
 }
 }
