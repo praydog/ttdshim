@@ -21,52 +21,7 @@ typedef struct _PROCESS_INSTRUMENTATION_CALLBACK_INFORMATION
 namespace ttd::hooks {
 bool initialized = false;
 
-// Creates unique shellcode for each hook so we can print the names of each hooked function
-// as they're called.
-class MidHooker : public Xbyak::CodeGenerator {
-public:
-    using MidHookFn = void (*)(safetyhook::Context& ctx, MidHooker& self);
-
-    MidHooker(void* target, void* detour, const std::string& name)
-        : m_name(name)
-    {
-        spdlog::info("Hooking function: {} at {:x}", name, (uintptr_t)target);
-
-        // Use immediate addressing to avoid 64-bit displacement issues
-        mov(rdx, (uintptr_t)this);
-        mov(rax, (uintptr_t)detour);
-        jmp(rax);
-
-        auto code = getCode<safetyhook::MidHookFn>();
-
-        if (code == nullptr) {
-            throw std::runtime_error("Failed to generate hook code for function: " + name);
-        }
-
-        m_hook = safetyhook::create_mid(
-            target,
-            code);
-    }
-
-    const safetyhook::MidHook& hook() const {
-        return m_hook;
-    }
-
-    const std::string& name() const {
-        return m_name;
-    }
-
-    bool trigger_called() {
-        bool prev = m_called;
-        m_called = true;
-        return prev;
-    }
-
-private:
-    safetyhook::MidHook m_hook{};
-    std::string m_name{};
-    bool m_called{false};
-};
+class MidHooker;
 
 std::unordered_map<std::string, uintptr_t> g_inverse_symbol_map{};
 std::vector<std::unique_ptr<MidHooker>> g_mid_hooks{};
@@ -81,38 +36,6 @@ safetyhook::InlineHook g_before_syscall_hook{};
 
 using HandleFn = void* (*)(uintptr_t rcx, uintptr_t rdx);
 HandleFn g_handle_int3 = nullptr;
-
-void* realize_flags(uintptr_t rcx, uintptr_t rdx) {
-    const auto idx = *(uint8_t*)(rdx + 0x13);
-    auto& f12d8 = *(uint32_t*)(rcx + 0xF12D8);
-    auto& f1380 = *(uint32_t*)(rcx + 0xF1380);
-    spdlog::info("realize_flags idx: {}", idx);
-    spdlog::info("realize_flags f12d8: {} ({:X})", f12d8, f12d8);
-    spdlog::info("realize_flags f1380: {} ({:X})", f1380, f1380);
-
-    auto result = g_virtualize_flags_hook.call<void*>(rcx, rdx);
-    spdlog::info("realize_flags f1380 after call: {} ({:X})", f1380, f1380);
-
-    return result;
-}
-
-void* virtualize_flags(uintptr_t rcx, uintptr_t rdx) {
-    const auto idx = *(uint8_t*)(rdx + 0x13);
-    auto& f1380 = *(uint32_t*)(rcx + 0xF1380);
-    spdlog::info("virtualize_flags idx: {}", idx);
-    spdlog::info("virtualize_flags f1380: {} ({:X})", f1380, f1380);
-
-    auto result = g_virtualize_flags_hook.call<void*>(rcx, rdx);
-    spdlog::info("virtualize_flags f1380 after call: {} ({:X})", f1380, f1380);
-
-    return result;
-}
-
-void* handle_popf(uintptr_t rcx, uintptr_t instruction) {
-    spdlog::info("handle_popf called");
-    //return g_handle_int3(rcx, instruction);
-    return g_popf_hook.call<void*>(rcx, instruction);
-}
 
 namespace TTD {
 /*
@@ -213,7 +136,12 @@ static inline std::vector<std::string> register_names = {
 };
 
 struct ThreadInfo {
-    void* GetRegister(RegisterId id, void* out, size_t size) {
+    static ThreadInfo* get(void* regs = nullptr) {
+        static auto fn = (ThreadInfo* (*)(void*))g_inverse_symbol_map["public: static struct TTD::ThreadInfo * __ptr64 __cdecl TTD::ThreadInfo::GetOrCreateForCurrentThread(struct TTD::X64REGS const * __ptr64)"];
+        return fn(regs);
+    }
+
+    void* get_register(RegisterId id, void* out, size_t size) {
         static auto it = g_inverse_symbol_map.find("public: virtual void __cdecl TTD::ThreadInfo::GetRegister(struct TTD::RegisterId,void * __ptr64,unsigned __int64)const __ptr64");
 
         if (it == g_inverse_symbol_map.end()) {
@@ -225,18 +153,145 @@ struct ThreadInfo {
 
         return fn(this, id, out, size);
     }
+
+    void* set_register(RegisterId id, const void* value, size_t size) {
+        static auto it = g_inverse_symbol_map.find("public: virtual void __cdecl TTD::ThreadInfo::SetRegister(struct TTD::RegisterId,void const * __ptr64,unsigned __int64) __ptr64");
+
+        if (it == g_inverse_symbol_map.end()) {
+            spdlog::error("Failed to find SetRegister symbol");
+            return nullptr;
+        }
+
+        static auto fn = (void* (*)(ThreadInfo*, RegisterId, const void*, size_t))(it->second);
+
+        return fn(this, id, value, size);
+    }
+
+    template<typename T>
+    T get_register_value(RegisterId id) {
+        T value{};
+        get_register(id, &value, sizeof(value));
+        return value;
+    }
+
+    template<typename T>
+    void set_register_value(RegisterId id, T value) {
+        set_register(id, &value, sizeof(value));
+    }
 };
 }
 
-void* before_syscall(TTD::ThreadInfo* thread_info, void* variant) {
-    spdlog::info("before_syscall called");
-    // dump all registers
-    for (int i = TTD::GprsBegin; i <= TTD::GprsLast; i++) {
-        uint64_t value = 0;
-        thread_info->GetRegister((TTD::RegisterId)i, &value, sizeof(value));
-        auto regname = i < TTD::register_names.size() ? TTD::register_names[i] : std::to_string(i);
-        spdlog::info("Register {}: {:016X}", regname, value);
+// Creates unique shellcode for each hook so we can print the names of each hooked function
+// as they're called.
+class MidHooker : public Xbyak::CodeGenerator {
+public:
+    using MidHookFn = void (*)(safetyhook::Context& ctx, MidHooker& self);
+
+    MidHooker(void* target, void* detour, const std::string& name)
+        : m_name(name)
+    {
+        spdlog::info("Hooking function: {} at {:x}", name, (uintptr_t)target);
+
+        // Use immediate addressing to avoid 64-bit displacement issues
+        mov(rdx, (uintptr_t)this);
+        mov(rax, (uintptr_t)detour);
+        jmp(rax);
+
+        auto code = getCode<safetyhook::MidHookFn>();
+
+        if (code == nullptr) {
+            throw std::runtime_error("Failed to generate hook code for function: " + name);
+        }
+
+        m_hook = safetyhook::create_mid(
+            target,
+            code);
     }
+
+    const safetyhook::MidHook& hook() const {
+        return m_hook;
+    }
+
+    const std::string& name() const {
+        return m_name;
+    }
+
+    bool trigger_called() {
+        bool prev = m_called;
+        m_called = true;
+        return prev;
+    }
+
+private:
+    safetyhook::MidHook m_hook{};
+    std::string m_name{};
+    bool m_called{false};
+};
+
+void* realize_flags(uintptr_t rcx, uintptr_t rdx) {
+    const auto idx = *(uint8_t*)(rdx + 0x13);
+    auto& f12d8 = *(uint32_t*)(rcx + 0xF12D8);
+    auto& f1380 = *(uint32_t*)(rcx + 0xF1380);
+    spdlog::info("realize_flags idx: {}", idx);
+    spdlog::info("realize_flags f12d8: {} ({:X})", f12d8, f12d8);
+    spdlog::info("realize_flags f1380: {} ({:X})", f1380, f1380);
+
+    auto result = g_virtualize_flags_hook.call<void*>(rcx, rdx);
+    spdlog::info("realize_flags f1380 after call: {} ({:X})", f1380, f1380);
+
+    return result;
+}
+
+void* virtualize_flags(uintptr_t rcx, uintptr_t rdx) {
+    const auto idx = *(uint8_t*)(rdx + 0x13);
+    auto& f1380 = *(uint32_t*)(rcx + 0xF1380);
+    spdlog::info("virtualize_flags idx: {}", idx);
+    spdlog::info("virtualize_flags f1380: {} ({:X})", f1380, f1380);
+
+    auto result = g_virtualize_flags_hook.call<void*>(rcx, rdx);
+    spdlog::info("virtualize_flags f1380 after call: {} ({:X})", f1380, f1380);
+
+    return result;
+}
+
+void* handle_popf(uintptr_t rcx, uintptr_t instruction) {
+    spdlog::info("handle_popf called");
+    //return g_handle_int3(rcx, instruction);
+
+    auto ti = TTD::ThreadInfo::get();
+
+    if (ti != nullptr) {
+        auto rsp = ti->get_register_value<uint64_t>(TTD::Rsp);
+
+        // Check if trap flag is set
+        const auto eflags = *(uint64_t*)(rsp);
+
+        if (eflags & 0x100) {
+            spdlog::info("Trap flag is set, skipping POPF");
+            // Clear the trap flag
+            //*(uint32_t*)(rsp) = eflags & ~0x100;
+            // advance RSP to fix what POPF would have done
+            //ti->set_register_value<uint64_t>(TTD::Rsp, rsp + 8);
+            return g_handle_int3(rcx, instruction);
+        }
+    }
+
+    return g_popf_hook.call<void*>(rcx, instruction);
+}
+
+void* before_syscall(TTD::ThreadInfo* thread_info, void* variant) {
+    //spdlog::info("before_syscall called");
+
+    auto syscall_index = thread_info->get_register_value<uint64_t>(TTD::Rax);
+
+    // NtSetInformationProcess
+    if (syscall_index == 28) {
+        // skip dat shiet
+        spdlog::info("Skipping NtSetInformationProcess syscall");
+        thread_info->set_register_value<uint64_t>(TTD::Rax, 0); // random syscall (NtAccessCheck, harmless)
+        //return nullptr;
+    }
+
     auto result = g_before_syscall_hook.call<void*>(thread_info, variant);
 
     return result;
@@ -248,7 +303,10 @@ void __stdcall rtl_dispatch_exception(PEXCEPTION_RECORD ExceptionRecord, PCONTEX
     //MessageBoxA(NULL, "Caught exception in RtlDispatchException", "Info", MB_OK);
 
     // If we are pointing to an int 3, and the next three bytes are 0xBA 0xBE 0xEF, we need to increment the ip by 4 and update exception address, otherwise do nothing
-    if (*(uint8_t*)ip == 0xCC && *(uint8_t*)(ip + 1) == 0xBA && *(uint8_t*)(ip + 2) == 0xBE && *(uint8_t*)(ip + 3) == 0x90) {
+    if (*(uint8_t*)ip == 0xCC && ((
+        *(uint8_t*)(ip + 1) == 0xBA && *(uint8_t*)(ip + 2) == 0xBE && *(uint8_t*)(ip + 3) == 0x90) ||
+        (*(uint8_t*)(ip + 1) == 0x0F && *(uint8_t*)(ip + 2) == 0xA2 && *(uint8_t*)(ip + 3) == 0x90))) 
+    {
         ContextRecord->Rip += 3;
         ExceptionRecord->ExceptionAddress = (PVOID)ContextRecord->Rip;
         spdlog::info("Skipping int 3 in RtlDispatchException at address: {:X}", ip);
@@ -350,6 +408,11 @@ void initialize(void* original_dll) {
 
 
         if (name.contains("GetRegister")) {
+            std::printf(std::format("Found {} at {:x}\n", name, (uintptr_t)original_dll + rva).c_str());
+            continue;
+        }
+
+        if (name.contains("GetOrCreateForCurrentThread")) {
             std::printf(std::format("Found {} at {:x}\n", name, (uintptr_t)original_dll + rva).c_str());
             continue;
         }
