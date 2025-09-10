@@ -60,6 +60,34 @@ private:
 };
 
 std::vector<std::unique_ptr<MidHooker>> g_mid_hooks{};
+safetyhook::InlineHook g_realize_flags_hook{};
+safetyhook::InlineHook g_virtualize_flags_hook{};
+
+void* realize_flags(uintptr_t rcx, uintptr_t rdx) {
+    const auto idx = *(uint8_t*)(rdx + 0x13);
+    auto& f12d8 = *(uint32_t*)(rcx + 0xF12D8);
+    auto& f1380 = *(uint32_t*)(rcx + 0xF1380);
+    spdlog::info("realize_flags idx: {}", idx);
+    spdlog::info("realize_flags f12d8: {} ({:X})", f12d8, f12d8);
+    spdlog::info("realize_flags f1380: {} ({:X})", f1380, f1380);
+
+    auto result = g_virtualize_flags_hook.call<void*>(rcx, rdx);
+    spdlog::info("realize_flags f1380 after call: {} ({:X})", f1380, f1380);
+
+    return result;
+}
+
+void* virtualize_flags(uintptr_t rcx, uintptr_t rdx) {
+    const auto idx = *(uint8_t*)(rdx + 0x13);
+    auto& f1380 = *(uint32_t*)(rcx + 0xF1380);
+    spdlog::info("virtualize_flags idx: {}", idx);
+    spdlog::info("virtualize_flags f1380: {} ({:X})", f1380, f1380);
+
+    auto result = g_virtualize_flags_hook.call<void*>(rcx, rdx);
+    spdlog::info("virtualize_flags f1380 after call: {} ({:X})", f1380, f1380);
+
+    return result;
+}
 
 void initialize(void* original_dll) {
     if (initialized) {
@@ -86,7 +114,23 @@ void initialize(void* original_dll) {
             continue;
         }
 
-        if (!name.contains("REALIZEFLAGS") && !name.contains("VIRTUALIZEFLAGS")) {
+        if (!name.contains("REALIZEFLAGS") && !name.contains("VIRTUALIZEFLAGS") && !name.contains("Trap")) {
+            continue;
+        }
+
+        if (name.contains("REALIZEFLAGS")) {
+            g_realize_flags_hook = safetyhook::create_inline(
+                (void*)((uintptr_t)original_dll + rva),
+                (void*)realize_flags);
+
+            continue;
+        }
+
+        if (name.contains("VIRTUALIZEFLAGS")) {
+            g_virtualize_flags_hook = safetyhook::create_inline(
+                (void*)((uintptr_t)original_dll + rva),
+                (void*)virtualize_flags);
+            
             continue;
         }
 
@@ -140,6 +184,20 @@ void initialize(void* original_dll) {
                 //if (!self.trigger_called()) {
                     spdlog::info("First time in hook for function: {} at {:p}", self.name(), (void*)ctx.rip);
                 //}
+
+                if (self.name().contains("REALIZEFLAGS")) {
+                    const auto idx = *(uint8_t*)(ctx.rdx + 0x13);
+                    auto& f1380 = *(uint32_t*)(ctx.rcx + 0xF12D8);
+                    spdlog::info("REALIZEFLAGS idx: {}", idx);
+                    spdlog::info("REALIZEFLAGS f1380: {} ({:X})", f1380, f1380);
+                }
+
+                if (self.name().contains("VIRTUALIZEFLAGS")) {
+                    const auto idx = *(uint8_t*)(ctx.rdx + 0x13);
+                    auto& f1380 = *(uint32_t*)(ctx.rcx + 0xF1380);
+                    spdlog::info("VIRTUALIZEFLAGS idx: {}", idx);
+                    spdlog::info("VIRTUALIZEFLAGS f1380: {} ({:X})", f1380, f1380);
+                }
 
                 __nop();
             },
