@@ -110,8 +110,8 @@ void* virtualize_flags(uintptr_t rcx, uintptr_t rdx) {
 
 void* handle_popf(uintptr_t rcx, uintptr_t instruction) {
     spdlog::info("handle_popf called");
-    return g_handle_int3(rcx, instruction);
-    //return g_popf_hook.call<void*>(rcx, instruction);
+    //return g_handle_int3(rcx, instruction);
+    return g_popf_hook.call<void*>(rcx, instruction);
 }
 
 namespace TTD {
@@ -178,6 +178,40 @@ enum RegisterId : uint8_t {
     EFlags = 30,
 };
 
+static inline std::vector<std::string> register_names = {
+    "Dr0",
+    "Dr1",
+    "Dr2",
+    "Dr3",
+    "Dr6",
+    "Dr7",
+    "Rax",
+    "Rcx",
+    "Rdx",
+    "Rbx",
+    "Rsp",
+    "Rbp",
+    "Rsi",
+    "Rdi",
+    "R8",
+    "R9",
+    "R10",
+    "R11",
+    "R12",
+    "R13",
+    "R14",
+    "R15",
+    "Rip",
+    "SegCs",
+    "SegDs",
+    "SegEs",
+    "SegFs",
+    "SegGs",
+    "SegSs",
+    "UnkSize8",
+    "EFlags"
+};
+
 struct ThreadInfo {
     void* GetRegister(RegisterId id, void* out, size_t size) {
         static auto it = g_inverse_symbol_map.find("public: virtual void __cdecl TTD::ThreadInfo::GetRegister(struct TTD::RegisterId,void * __ptr64,unsigned __int64)const __ptr64");
@@ -200,7 +234,8 @@ void* before_syscall(TTD::ThreadInfo* thread_info, void* variant) {
     for (int i = TTD::GprsBegin; i <= TTD::GprsLast; i++) {
         uint64_t value = 0;
         thread_info->GetRegister((TTD::RegisterId)i, &value, sizeof(value));
-        spdlog::info("Register {}: {:016X}", i, value);
+        auto regname = i < TTD::register_names.size() ? TTD::register_names[i] : std::to_string(i);
+        spdlog::info("Register {}: {:016X}", regname, value);
     }
     auto result = g_before_syscall_hook.call<void*>(thread_info, variant);
 
