@@ -102,7 +102,15 @@ set(ttdshim_SOURCES
 	cmake.toml
 	"src/Hooks.cpp"
 	"src/Hooks.hpp"
+	"src/InstructionInstrumentation.cpp"
+	"src/InstructionInstrumentation.hpp"
 	"src/Main.cpp"
+	"src/MidHooker.cpp"
+	"src/MidHooker.hpp"
+	"src/State.cpp"
+	"src/State.hpp"
+	"src/TTD/ThreadInfo.cpp"
+	"src/TTD/ThreadInfo.hpp"
 	ttdshim.def
 )
 

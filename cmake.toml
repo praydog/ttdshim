@@ -45,7 +45,7 @@ shallow = true
 
 [target.ttdshim]
 type = "shared"
-sources = ["src/*.cpp", "src/*.hpp", "ttdshim.def"]
+sources = ["src/**.cpp", "src/**.hpp", "ttdshim.def"]
 link-libraries = ["kananlib", "safetyhook", "xbyak", "urlmon"]
 compile-options = ["/W3"]
 
