@@ -386,7 +386,14 @@ const uint8_t redirected_opcodes[] = {
   0xEB, 0xEE + 2, 0x90, 0x90, 0x90, 0x90
 };
 
-uint8_t original_data[sizeof(redirected_opcodes)]{};
+const uint8_t redirected_opcodes_4990[] = {
+  0x48, 0x89, 0x05, 0x0C, 0x00, 0x00, 0x00, 0x4C,
+  0x89, 0xC0, 0x4C, 0x8B, 0x05, 0x02, 0x00, 0x00,
+  0x00, 0xEB, 0xED + 2, 0x90, 0x90, 0x90, 0x90, 0x90,
+  0x90, 0x90, 0x90
+};
+
+std::vector<uint8_t> original_data{};
 
 uint32_t current_opcode_index = 0;
 uintptr_t last_redirection_start_point = 0;
@@ -403,7 +410,7 @@ void* trace_lookup_hook(TTD::ttd_vcpu_arch_t* arch, uint64_t unk) {
             running_redirection = false;
             current_opcode_index = 0;
             //rip = last_redirection_start_point + 2;
-            memcpy((void*)last_redirection_start_point, original_data, sizeof(original_data));
+            memcpy((void*)last_redirection_start_point, original_data.data(), original_data.size());
             VirtualProtect((void*)last_redirection_start_point, sizeof(redirected_opcodes), old_protect_value, &old_protect_value);
             std::cout << fmt::format("Finished redirection, setting RIP to {:X}\n", rip);
             return g_state->trace_lookup_hook.unsafe_call<void*>(arch, unk);
@@ -412,16 +419,29 @@ void* trace_lookup_hook(TTD::ttd_vcpu_arch_t* arch, uint64_t unk) {
         //rip = (uintptr_t)last_redirection_start_point + (current_opcode_index * 4);
     }
 
+    // here
     if (*(uint8_t*)rip == 0x41 && *(uint8_t*)(rip + 1) == 0x90) {
+        original_data.resize(sizeof(redirected_opcodes));
         std::cout << fmt::format("[trace_lookup_hook] Found xchg eax, r8d! RIP: {:X}, REDIRECTING...\n", rip);
         running_redirection = true;
         last_redirection_start_point = rip;
         current_opcode_index = 0;
         //rip = (uintptr_t)&redirected_opcodes[current_opcode_index];
-        memcpy(original_data, (void*)rip, sizeof(original_data));
+        memcpy(original_data.data(), (void*)rip, sizeof(original_data));
         VirtualProtect((void*)rip, sizeof(original_data), PAGE_EXECUTE_READWRITE, &old_protect_value);
         memcpy((void*)rip, redirected_opcodes, sizeof(redirected_opcodes));
+    } else if (*(uint8_t*)rip == 0x49 && *(uint8_t*)(rip + 1) == 0x90) {
+        original_data.resize(sizeof(redirected_opcodes_4990));
+        std::cout << fmt::format("[trace_lookup_hook] Found xchg rax, r8! RIP: {:X}, REDIRECTING...\n", rip);
+        running_redirection = true;
+        last_redirection_start_point = rip;
+        current_opcode_index = 0;
+        //rip = (uintptr_t)&redirected_opcodes[current_opcode_index];
+        memcpy(original_data.data(), (void*)rip, sizeof(original_data));
+        VirtualProtect((void*)rip, sizeof(original_data), PAGE_EXECUTE_READWRITE, &old_protect_value);
+        memcpy((void*)rip, redirected_opcodes_4990, sizeof(redirected_opcodes_4990));
     }
+
     auto res = g_state->trace_lookup_hook.unsafe_call<void*>(arch, unk);
 
     return res;
