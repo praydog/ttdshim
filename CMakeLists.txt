@@ -109,8 +109,14 @@ set(ttdshim_SOURCES
 	"src/MidHooker.hpp"
 	"src/State.cpp"
 	"src/State.hpp"
+	"src/TTD/INativeRecordVirtualCpu.cpp"
+	"src/TTD/INativeRecordVirtualCpu.hpp"
+	"src/TTD/NtRuntime.cpp"
+	"src/TTD/NtRuntime.hpp"
 	"src/TTD/ThreadInfo.cpp"
 	"src/TTD/ThreadInfo.hpp"
+	"src/TTD/Writer/Thread.cpp"
+	"src/TTD/Writer/Thread.hpp"
 	ttdshim.def
 )
 

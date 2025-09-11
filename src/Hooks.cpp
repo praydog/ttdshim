@@ -4,7 +4,9 @@
 #include <intrin.h>
 
 #include <Windows.h>
+#include <winternl.h>
 #include <TlHelp32.h>
+#include <Psapi.h>
 
 #include <safetyhook.hpp>
 #include <xbyak/xbyak.h>
@@ -13,6 +15,7 @@
 
 #include "State.hpp"
 #include "TTD/ThreadInfo.hpp"
+#include "TTD/Writer/Thread.hpp"
 #include "InstructionInstrumentation.hpp"
 
 #include "Hooks.hpp"
@@ -129,8 +132,19 @@ LONG __stdcall nt_set_information_thread_hook(
 
 safetyhook::MidHook g_decoder_hook{};
 safetyhook::MidHook g_decode_instruction_hook{};
+safetyhook::MidHook g_decode_single_instruction_hook{};
+safetyhook::MidHook g_nop_hook{};
+bool needs_fix = false;
+uint8_t* old_insn_ptr = nullptr;
+
+bool inside_sim = false;
+
 
 void decoder_hook(safetyhook::Context& ctx) {
+    if (inside_sim) {
+        return;
+    }
+
     auto ti = TTD::ThreadInfo::get();
     auto rip = ti->get_register_value<uint64_t>(TTD::Rip);
     //std::cout << fmt::format("In decoder_hook! RIP: {:X}\n", rip);
@@ -140,7 +154,7 @@ void decoder_hook(safetyhook::Context& ctx) {
         auto rdi = ctx.rdi;
         auto edi = rdi & 0xFFFFFFFF;
         std::cout << fmt::format("Found xchg eax, r8d! RAX: {:X}, EDI: {:X}\n", rax, edi);
-        ctx.rax = ttd::instrumentation::g_hook_XCHG.target_address();
+        //ctx.rax = ttd::instrumentation::g_hook_XCHG.target_address();
         MessageBoxA(NULL, "Found xchg eax, r8d", "Info", MB_OK);
 
         //ti->realize_guest_machine_state(-1);
@@ -163,6 +177,16 @@ void decoder_hook(safetyhook::Context& ctx) {
 
         MessageBoxA(NULL, "Found xchg eax, r8d", "Info", MB_OK);
     }
+
+    if (needs_fix) {
+        MessageBoxA(NULL, "Fixing instruction", "Info", MB_OK);
+        DWORD old_protect;
+        VirtualProtect(old_insn_ptr, 2, PAGE_EXECUTE_READWRITE, &old_protect);
+        old_insn_ptr[1] = 0x90;
+        VirtualProtect(old_insn_ptr, 2, old_protect, &old_protect);
+
+        needs_fix = false;
+    }
 }
 
 const uint8_t fake_shit[] = {
@@ -170,6 +194,10 @@ const uint8_t fake_shit[] = {
 };
 
 void decode_instruction_hook(safetyhook::Context& ctx) {
+    if (inside_sim) {
+        return;
+    }
+
     auto ti = TTD::ThreadInfo::get();
     auto rip = ti->get_register_value<uint64_t>(TTD::Rip);
     std::cout << fmt::format("In decode_instruction_hook! RIP: {:X}\n", rip);
@@ -184,10 +212,219 @@ void decode_instruction_hook(safetyhook::Context& ctx) {
         MessageBoxA(NULL, "[decode instruction] Found xchg eax, r8d", "Info", MB_OK);
 
         auto& insn = *(uintptr_t*)(ctx.rcx + 0x8);
-        insn = (uintptr_t)fake_shit;
+        //insn = (uintptr_t)fake_shit;
 
         //ctx.rax = (uintptr_t)g_hOriginalDLL + 0x92470;
     }
+}
+
+void decode_single_instruction_hook(safetyhook::Context& ctx) {
+    if (inside_sim || true) {
+        return;
+    }
+
+    TTD::ttd_vcpu_arch_t* arch = reinterpret_cast<TTD::ttd_vcpu_arch_t*>(ctx.rcx);
+    auto& regs = arch->regs.regs;
+
+    auto ti = TTD::ThreadInfo::get();
+    auto rip = ti->get_register_value<uint64_t>(TTD::Rip);
+    std::cout << fmt::format("In decode_single_instruction_hook! RIP: {:X}\n", rip);
+
+    if (*(uint8_t*)(rip + 3) == 0x41 && *(uint8_t*)(rip + 4) == 0x90) {
+        auto rcx = ctx.rcx;
+        auto rdx = ctx.rdx;
+        std::cout << fmt::format("[decode single instruction hook] Found xchg eax, r8d! RCX: {:X}, RDX: {:X}\n", rcx, rdx);
+
+        auto& insn = *(uint8_t**)(ctx.rcx + 0xF02E8);
+        old_insn_ptr = insn;
+        //insn = (uintptr_t)fake_shit;
+
+        DWORD old_protect;
+        VirtualProtect(insn, 2, PAGE_EXECUTE_READWRITE, &old_protect);
+        insn[3] = 0x90;
+        insn[4] = 0x90;
+        VirtualProtect(insn, 2, old_protect, &old_protect);
+        needs_fix = true;
+        
+        // log regs
+        std::cout << fmt::format("[decode single instruction hook] (real regs) RIP: {:X}, RAX: {:X}, RBX: {:X}, RCX: {:X}, RDX: {:X}, R8: {:X}, R9: {:X}\n",
+            regs.rip, regs.rax, regs.rbx, regs.rcx, regs.rdx, regs.r8, regs.r9);
+
+        auto og_r8 = regs.r8;
+        auto og_rax = regs.rax;
+
+        // manually swap out RAX and R8
+        //std::swap(regs.rax, regs.r8);
+
+        // clear out upper 32 bits of R8
+        //regs.r8 &= 0xFFFFFFFF;
+        //regs.rax &= 0xFFFFFFFF;
+        //regs.rax = 0x77;
+
+        auto vcpu = ti->pv_ensure_thread_state();
+        auto vcpu_regs = vcpu->get_registers();
+
+        auto teb = (_TEB*)vcpu_regs->regs.teb;
+        auto tid = *(uint32_t*)((uintptr_t)teb + 0x48);
+        std::cout << fmt::format("[decode single instruction hook] TEB: {:X}, TID: {:X}\n", (uintptr_t)teb, tid);
+
+        // open thread
+        HANDLE hThread = OpenThread(THREAD_ALL_ACCESS, FALSE, tid);
+        if (hThread != NULL) {
+            std::cout << fmt::format("[decode single instruction hook] Opened thread handle: {:X}\n", (uintptr_t)hThread);
+
+            // get thread context
+            CONTEXT context;
+            context.ContextFlags = CONTEXT_ALL;
+
+            if (GetThreadContext(hThread, &context)) {
+                std::cout << fmt::format("[decode single instruction hook] Got thread context! RIP: {:X}, RAX: {:X}, R8: {:X}\n", context.Rip, context.Rax, context.R8);
+
+                // manually swap out RAX and R8
+                //std::swap(context.Rax, context.R8);
+
+                // set thread context
+                if (SetThreadContext(hThread, &context)) {
+                    std::cout << fmt::format("[decode single instruction hook] Set thread context! RIP: {:X}, RAX: {:X}, R8: {:X}\n", context.Rip, context.Rax, context.R8);
+                } else {
+                    std::cout << fmt::format("[decode single instruction hook] Failed to set thread context: {:X}\n", (uintptr_t)GetLastError());
+                }
+            } else {
+                std::cout << fmt::format("[decode single instruction hook] Failed to get thread context: {:X}\n", (uintptr_t)GetLastError());
+            }
+        } else {
+            std::cout << fmt::format("[decode single instruction hook] Failed to open thread handle: {:X}\n", (uintptr_t)GetLastError());
+        }
+        //vcpu_regs->regs.rax = 0x77;
+        //vcpu_regs->virtualize_state(3);
+
+        // swap out thread info variant as well
+
+        //ti->set_register_value(TTD::Rax, 0x77);
+        //ti->VirtualizeGuestMachineState(3);
+
+        // update thread info variant
+        //ti->set_register_value(TTD::Rax, 0x77);
+        //ti->RealizeGuestMachineState(2);
+        auto writer = ti->get_writer();
+
+        if (writer != nullptr) {
+            /*writer->increment_thing();
+            writer->update_instruction_count(ti, 0);
+            writer->add_start_instruction(0);
+            //writer->save_guest_state_for_sequencing_event(ti, 9);
+            //writer->add_exit_emulation(ti, 9, writer->instruction_count());
+            //writer->add_soft_sequence();
+            writer->reset_instruction_count(ti);
+            writer->insert_register_state(ti, false);
+            //writer->insert_new_sequence();
+            writer->reset_instruction_count(ti);
+            writer->set_thing_zero();
+            writer->generate_full_flush_request_if_needed();
+            //writer->insert_keyframe(ti);
+            //writer->insert_flush_sequence(ti);
+            */
+
+            //writer->instruction_count_callback(ti, ti->GetInstructionCount());
+        }
+
+        //ti->set_register_value(TTD::R8, regs.r8);
+        //ti->set_register_value(TTD::R9, regs.r9);
+        //ti->RealizeGuestMachineState(2);
+
+        /*ti->get_main_virtual_context()->copy_to(ti->get_guest_context()); // HACK!!!! poop FART
+
+        if (ti->get_main_virtual_context() != ti->get_virtual_context()) {
+            ti->get_main_virtual_context()->copy_to(ti->get_virtual_context());
+        }
+
+        auto vcpu = ti->pv_ensure_thread_state();
+        ti->get_main_virtual_context()->copy_to(vcpu->get_registers());
+        ti->get_main_virtual_context()->copy_to(ti->get_vcpu_state());*/
+        inside_sim = true;
+        //vcpu->SimulationLoop(1);
+        //vcpu->get_registers()->regs.rip = 0;
+        //std::swap(vcpu->get_registers()->regs.rax, vcpu->get_registers()->regs.r8);
+        //vcpu->get_registers()->regs.rax = 0x1337BEEF;
+        inside_sim = false;
+        //ti->TransferStateFromVcpu(vcpu);
+        //std::cout << fmt::format("[decode single instruction hook] vcpu pointer: {:X}\n", (uintptr_t)vcpu->get_registers());
+
+        //ti->RealizeGuestMachineState(-1);
+
+        MessageBoxA(NULL, "[decode single instruction] Found xchg eax, r8d", "Info", MB_OK);
+    }
+
+    // check if 4A 8D 9C 90 8B DD AB F2
+    /*if (*(uint8_t*)rip == 0x4A && *(uint8_t*)(rip + 1) == 0x8D && *(uint8_t*)(rip + 2) == 0x9C && *(uint8_t*)(rip + 3) == 0x90 && *(uint8_t*)(rip + 4) == 0x8B && *(uint8_t*)(rip + 5) == 0xDD && *(uint8_t*)(rip + 6) == 0xAB && *(uint8_t*)(rip + 7) == 0xF2) {
+        std::cout << fmt::format("[decode instruction hook] Found 4A 8D 9C 90 8B DD AB F2 at RIP: {:X}\n", rip);
+
+        // screw up r9 to be some random value
+        auto arch = reinterpret_cast<TTD::ttd_vcpu_arch_t*>(ctx.rcx);
+        arch->regs.r9 = 0x1337BEEF;
+    }*/
+}
+
+void nop_hook(safetyhook::Context& ctx) {
+    // does nothing
+    std::cout << "In nop_hook" << std::endl;
+    //MessageBoxA(NULL, "In nop_hook", "Info", MB_OK);
+
+    auto ti = TTD::ThreadInfo::get();
+    auto rip = ti->get_register_value<uint64_t>(TTD::Rip);
+
+
+    if (*(uint8_t*)rip == 0x41 && *(uint8_t*)(rip + 1) == 0x90) {
+        std::cout << fmt::format("[nop_hook] Found xchg eax, r8d! RIP: {:X}\n", rip);
+        //ctx.rip = (uintptr_t)g_hOriginalDLL + 0xB83D7;
+    }
+}
+
+const uint8_t redirected_opcodes[] = {
+  0x89, 0x05, 0x0C, 0x00, 0x00, 0x00, 0x44, 0x89,
+  0xC0, 0x44, 0x8B, 0x05, 0x02, 0x00, 0x00, 0x00,
+  0xEB, 0xEE + 2, 0x90, 0x90, 0x90, 0x90
+};
+
+uint8_t original_data[sizeof(redirected_opcodes)]{};
+
+uint32_t current_opcode_index = 0;
+uintptr_t last_redirection_start_point = 0;
+bool running_redirection = false;
+DWORD old_protect_value = 0;
+
+void* trace_lookup_hook(TTD::ttd_vcpu_arch_t* arch, uint64_t unk) {
+    std::cout << fmt::format("In trace_lookup_hook! ARCH: {:X}, UNK: {:X}\n", (uintptr_t)arch, unk);
+    auto& regs = arch->regs.regs;
+    auto& rip = regs.rip;
+
+    if (running_redirection) {
+        if (rip == last_redirection_start_point + 2) {
+            running_redirection = false;
+            current_opcode_index = 0;
+            //rip = last_redirection_start_point + 2;
+            memcpy((void*)last_redirection_start_point, original_data, sizeof(original_data));
+            VirtualProtect((void*)last_redirection_start_point, sizeof(redirected_opcodes), old_protect_value, &old_protect_value);
+            std::cout << fmt::format("Finished redirection, setting RIP to {:X}\n", rip);
+            return g_state->trace_lookup_hook.unsafe_call<void*>(arch, unk);
+        }
+
+        //rip = (uintptr_t)last_redirection_start_point + (current_opcode_index * 4);
+    }
+
+    if (*(uint8_t*)rip == 0x41 && *(uint8_t*)(rip + 1) == 0x90) {
+        std::cout << fmt::format("[trace_lookup_hook] Found xchg eax, r8d! RIP: {:X}, REDIRECTING...\n", rip);
+        running_redirection = true;
+        last_redirection_start_point = rip;
+        current_opcode_index = 0;
+        //rip = (uintptr_t)&redirected_opcodes[current_opcode_index];
+        memcpy(original_data, (void*)rip, sizeof(original_data));
+        VirtualProtect((void*)rip, sizeof(original_data), PAGE_EXECUTE_READWRITE, &old_protect_value);
+        memcpy((void*)rip, redirected_opcodes, sizeof(redirected_opcodes));
+    }
+    auto res = g_state->trace_lookup_hook.unsafe_call<void*>(arch, unk);
+
+    return res;
 }
 
 void initialize(void* original_dll) {
@@ -220,9 +457,9 @@ void initialize(void* original_dll) {
             if (name.contains("RtlDispatchException")) {
                 MessageBoxA(NULL, "Setting RtlDispatchException hook", "Info", MB_OK);
                 spdlog::info("Hooking RtlDispatchException at RVA {:x}", rva);
-                g_state->rtl_dispatch_exception_hook = safetyhook::create_inline(
-                    (void*)((uintptr_t)ntdll + rva),
-                    (void*)rtl_dispatch_exception);
+                //g_state->rtl_dispatch_exception_hook = safetyhook::create_inline(
+                    //(void*)((uintptr_t)ntdll + rva),
+                    //(void*)rtl_dispatch_exception);
                 break;
             }
         }
@@ -457,7 +694,7 @@ void initialize(void* original_dll) {
 
     ttd::instrumentation::install(g_state->inverse_symbol_map);
 
-    g_decoder_hook = safetyhook::create_mid(
+    /*g_decoder_hook = safetyhook::create_mid(
         (void*)((uintptr_t)original_dll + 0x20B85),
         decoder_hook
     );
@@ -465,6 +702,22 @@ void initialize(void* original_dll) {
     g_decode_instruction_hook = safetyhook::create_mid(
         (void*)((uintptr_t)original_dll + 0x8C88C),
         decode_instruction_hook
+    );
+
+    g_decode_single_instruction_hook = safetyhook::create_mid(
+        (void*)((uintptr_t)original_dll + 0xFAC4),
+        decode_single_instruction_hook
+    );
+
+    g_nop_hook = safetyhook::create_mid(
+        (void*)((uintptr_t)original_dll + 0xB83C4),
+        nop_hook
+    );*/
+
+    g_state->trace_lookup_hook = safetyhook::create_inline(
+        //(void*)((uintptr_t)original_dll + 0xF698),
+        g_state->partial_symbol_lookup("TTD::VirtualCpuArchitecture<class TTD::X64Traits>::TraceLookup").value_or(0),
+        (void*)trace_lookup_hook
     );
 
     // make entire binary RWX because we're hackers

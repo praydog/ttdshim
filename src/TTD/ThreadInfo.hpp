@@ -4,6 +4,13 @@
 #include <vector>
 #include <string>
 
+#include "INativeRecordVirtualCpu.hpp"
+#include "NtRuntime.hpp"
+
+namespace TTD::Writer {
+    class Thread;
+}
+
 namespace TTD {
 /*
 
@@ -33,13 +40,13 @@ namespace TTD {
 */
 
 enum RegisterId : uint8_t {
-    GprsBegin = 0,
     Dr0 = 0,
     Dr1 = 1,
     Dr2 = 2,
     Dr3 = 3,
     Dr6 = 4,
     Dr7 = 5,
+    GprsBegin = 6,
     Rax = 6,
     Rcx = 7,
     Rdx = 8,
@@ -102,23 +109,103 @@ static inline std::vector<std::string> register_names = {
     "EFlags"
 };
 
-struct ThreadInfo {
+class SmartContext {
+public:
+    virtual void* SetClientTls(void* tls) = 0;
+    virtual void* GetRegistersData() = 0;
+    virtual void* GetRegistersDiffListFrom(uint32_t, const void*) = 0;
+    virtual void* GetVirtualProcessorState(uint32_t, void*) = 0;
+    virtual void* SetVirtualProcessorState(uint32_t, const void*) = 0;
+    virtual void* GetRegister(RegisterId, void*, uint64_t) = 0;
+    virtual void* SetRegister(RegisterId, const void*, uint64_t) = 0;
+    virtual uintptr_t GetPC() = 0;
+    virtual _TEB* GetTeb() = 0;
+    virtual void SetPC(uintptr_t) = 0;
+    virtual uint64_t GetRegistersHash(uint32_t) = 0;
+    virtual uint64_t GetInstructionCount() = 0;
+    virtual uint64_t ResetInstructionCount() = 0;
+    virtual void SetInstructionCountLimit(uint64_t) = 0;
+    virtual uint64_t GetInstructionSize(const void*, uint64_t) = 0;
+    virtual void EmptyDataCache() = 0;
+    virtual uint32_t QueryDataCacheLineSize() = 0;
+    virtual uintptr_t AlignAddrToDataCacheLineSize(uintptr_t) = 0;
+    virtual void* RegisterInstrumentationCallbacks(const void*) = 0;
+    virtual void RealizeGuestMachineState(uint32_t) = 0;
+    virtual void VirtualizeGuestMachineState(uint32_t) = 0;
+    virtual void DisableFastMemoryPath() = 0;
+
+public:
+    TTD::Writer::Thread* get_writer();
+
+private:
+    TTD::Writer::Thread* writer;
+};
+
+class IThreadInfo {
+public:
+    virtual ~IThreadInfo() = default;
+    virtual bool BelongsToTheRunningThread() = 0;
+    virtual void TransferStateFromVcpu(const INativeRecordVirtualCpu*) = 0;
+    virtual void EngageThrottleIfAppropriate() = 0;
+    virtual bool ShouldConditionallyStopRecordingAtReturnInstruction(uintptr_t) = 0;
+    virtual bool ShouldConditionallyStopRecordingAtJumpInstruction(uintptr_t) = 0;
+    virtual bool ShouldConditionallyStopRecordingAtCallInstruction(uintptr_t) = 0;
+    virtual bool ShouldStopSimulationAfterReturnInstruction(uintptr_t, uintptr_t) = 0;
+    virtual bool ShouldPauseSimulationAfterCallOrJumpInstruction(uintptr_t, uintptr_t, uintptr_t, uint64_t) = 0;
+    virtual bool TryGetUsedHostStackSize(uintptr_t) = 0;
+    virtual void CheckForPendingInterrupts() = 0;
+    virtual uintptr_t CheckIsInsideRtlInterlockedPopEntrySListAndReturnResumeAddress(uint64_t) = 0;
+    virtual void RecordSystemTime() = 0;
+    virtual void BeginGuestOperation() = 0;
+    virtual void EndGuestOperation() = 0;
+    virtual bool IsGuestOperation() = 0;
+    virtual bool IsKnownEscapeWithReturn(uintptr_t) = 0;
+    virtual int GetKnownEscapeGoDispatchReason(uintptr_t) = 0;
+};
+
+class ThreadInfo : public SmartContext, public IThreadInfo {
+public:
+    static constexpr inline size_t VIRTUAL_CONTEXT1_OFFSET = 0x48;
+    static constexpr inline size_t VIRTUAL_CONTEXT2_OFFSET = 0xC00;
+    static constexpr inline size_t GUEST_CONTEXT_OFFSET = 0x80;
+    static constexpr inline size_t VCPU_STATE_OFFSET = 0xBF0;
+    static constexpr inline size_t NTRT_OFFSET = 0x1898;
+
     static ThreadInfo* get(void* regs = nullptr);
-    void* get_register(RegisterId id, void* out, size_t size);
-    void* set_register(RegisterId id, const void* value, size_t size);
-    void virtualize_guest_machine_state(uint32_t regs_mask);
-    void realize_guest_machine_state(uint32_t regs_mask);
+    INativeRecordVirtualCpu* pv_ensure_thread_state();
+
+    X64EmulatorRegisters* get_main_virtual_context() const {
+        auto res =  *(X64EmulatorRegisters**)((uintptr_t)this + VIRTUAL_CONTEXT1_OFFSET);
+
+        return res != nullptr ? res : get_virtual_context();
+    }
+
+    X64EmulatorRegisters* get_virtual_context() const {
+        return (X64EmulatorRegisters*)((uintptr_t)this + VIRTUAL_CONTEXT2_OFFSET);
+    }
+
+    X64EmulatorRegisters* get_guest_context() const {
+        return (X64EmulatorRegisters*)((uintptr_t)this + GUEST_CONTEXT_OFFSET);
+    }
+
+    X64EmulatorRegisters* get_vcpu_state() const {
+        return (X64EmulatorRegisters*)((uintptr_t)this + VCPU_STATE_OFFSET);
+    }
+
+    NtRuntime* get_ntrt() const {
+        return *(NtRuntime**)((uintptr_t)this + NTRT_OFFSET);
+    }
 
     template<typename T>
     T get_register_value(RegisterId id) {
         T value{};
-        get_register(id, &value, sizeof(value));
+        GetRegister(id, &value, sizeof(value));
         return value;
     }
 
     template<typename T>
     void set_register_value(RegisterId id, T value) {
-        set_register(id, &value, sizeof(value));
+        SetRegister(id, &value, sizeof(value));
     }
 };
 }

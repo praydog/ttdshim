@@ -19,9 +19,20 @@ namespace ttd {
         safetyhook::InlineHook nt_set_information_thread_hook{};
         safetyhook::InlineHook popf_hook{};
         safetyhook::InlineHook before_syscall_hook{};
+        safetyhook::InlineHook trace_lookup_hook{};
 
         using HandleFn = void* (*)(uintptr_t rcx, uintptr_t rdx);
         HandleFn handle_int3 = nullptr;
+
+        std::optional<uintptr_t> partial_symbol_lookup(const std::string& partial_name) const {
+            for (const auto& [name, addr] : inverse_symbol_map) {
+                if (name.find(partial_name) != std::string::npos) {
+                    return addr;
+                }
+            }
+
+            return std::nullopt;
+        }
     };
 
     extern std::unique_ptr<State> g_state;

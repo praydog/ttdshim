@@ -3574,6 +3574,11 @@ uint64_t HandleXCHG(uintptr_t decoder, TTD::DecodedInstruction* instr) {
     if (ti != nullptr) {
         auto rip = ti->get_register_value<uint64_t>(TTD::Rip);
         std::cout << fmt::format("XCHG instruction at RIP: {:#x}\n", rip);
+
+        if (*(uint8_t*)rip == 0x41 && *(uint8_t*)(rip + 1) == 0x90) {
+            std::cout << std::format("XCHG instruction is XCHG eax, r8d, DECODER: {:X}, instr: {:X}\n", decoder, (uintptr_t)instr);
+            MessageBoxA(NULL, "XCHG instruction is XCHG eax, r8d", "Info", MB_OK);
+        }
     }
 
     auto result = g_hook_XCHG.unsafe_call<uint64_t>(decoder, instr);

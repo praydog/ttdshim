@@ -1,0 +1,54 @@
+type uintptr_t 8 [[u64]]
+type uint64_t 8 [[u64]]
+type int64_t 8 [[i64]]
+type int32_t 4 [[i32]]
+type uint32_t 4 [[u32]]
+type int16_t 2 [[i16]]
+type uint16_t 2 [[u16]]
+type uint8_t 1 [[u8]]
+type float 4 [[f32]]
+type char 1
+type void 0
+type wchar_t 2 [[u16]]
+type bool 1 [[u8]]
+
+struct BS 0x1000 {}
+
+namespace TTD {
+struct Instruction{}
+struct DecoderThing 0x5000 {
+
+}
+
+struct DecoderThing2 0x5000 {
+    uint8_t* original_instruction @ 0x18
+    Instruction instruction @ 0x20
+}
+
+struct Decoder 0x1000 {
+    DecoderThing* thing
+    DecoderThing2* thing2
+
+    uint8_t* insn_bytes @ 0x20
+    uint8_t* insn_bytes2 @ 0x28
+}
+
+struct Instruction 0x118 {
+    uint8_t* original_instruction
+    uint8_t* cached_instruction
+    BS* unk
+
+    uint32_t regtype1 @ 0x20;
+    uint32_t reg1 @ 0x24;
+    uint32_t regtype2 @ 0x48;
+    uint32_t reg2 @ 0x4C;
+
+    uint32_t length @ 0xF0
+
+    uint8_t* cached_instruction_2 @ 0xF8
+}
+
+struct X64EmulatorRegisters 0xC80 {
+    void* rip @ 0x68
+}
+}
