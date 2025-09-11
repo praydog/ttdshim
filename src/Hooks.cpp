@@ -70,6 +70,7 @@ void* before_syscall(TTD::ThreadInfo* thread_info, void* variant) {
 
         // NtSetInformationProcess
         if (syscall_index == 28) {
+            std::cout << fmt::format("NtSetInformationProcess called, setting Rax to 0\n");
             thread_info->set_register_value<uint64_t>(TTD::Rax, 0); // random syscall (NtAccessCheck, harmless)
         }
     }
@@ -383,63 +384,101 @@ void nop_hook(safetyhook::Context& ctx) {
 const uint8_t redirected_opcodes[] = {
   0x89, 0x05, 0x0C, 0x00, 0x00, 0x00, 0x44, 0x89,
   0xC0, 0x44, 0x8B, 0x05, 0x02, 0x00, 0x00, 0x00,
-  0xEB, 0xEE + 2, 0x90, 0x90, 0x90, 0x90
+  0xEB, 0xEE, 0x90, 0x90, 0x90, 0x90
 };
 
 const uint8_t redirected_opcodes_4990[] = {
   0x48, 0x89, 0x05, 0x0C, 0x00, 0x00, 0x00, 0x4C,
   0x89, 0xC0, 0x4C, 0x8B, 0x05, 0x02, 0x00, 0x00,
-  0x00, 0xEB, 0xED + 2, 0x90, 0x90, 0x90, 0x90, 0x90,
+  0x00, 0xEB, 0xED, 0x90, 0x90, 0x90, 0x90, 0x90,
   0x90, 0x90, 0x90
 };
 
-std::vector<uint8_t> original_data{};
+struct ThreadData {
+    std::vector<uint8_t> original_data{};
+    uint32_t current_opcode_index = 0;
+    uintptr_t last_redirection_start_point = 0;
+    bool running_redirection = false;
+    bool hit_first_redirect = false;
+    DWORD old_protect_value = 0;
+};
 
-uint32_t current_opcode_index = 0;
-uintptr_t last_redirection_start_point = 0;
-bool running_redirection = false;
-DWORD old_protect_value = 0;
+std::recursive_mutex thread_data_mutex;
+std::unordered_map<uint32_t, std::unique_ptr<ThreadData>> thread_data_map{};
+
 
 void* trace_lookup_hook(TTD::ttd_vcpu_arch_t* arch, uint64_t unk) {
-    std::cout << fmt::format("In trace_lookup_hook! ARCH: {:X}, UNK: {:X}\n", (uintptr_t)arch, unk);
+    //std::cout << fmt::format("In trace_lookup_hook! ARCH: {:X}, UNK: {:X}\n", (uintptr_t)arch, unk);
     auto& regs = arch->regs.regs;
     auto& rip = regs.rip;
+    auto thread_id = GetCurrentThreadId();
+    
+    while (!thread_data_mutex.try_lock()) {
+        Sleep(0);
+    }
 
-    if (running_redirection) {
-        if (rip == last_redirection_start_point + 2) {
-            running_redirection = false;
-            current_opcode_index = 0;
+    if (!thread_data_map.contains(thread_id)) {
+        thread_data_map[thread_id] = std::make_unique<ThreadData>();
+    }
+    auto& thread_data = *thread_data_map[thread_id];
+
+    if (thread_data.running_redirection) {
+        if (rip == thread_data.last_redirection_start_point && thread_data.hit_first_redirect) {
+            thread_data.hit_first_redirect = false;
+            thread_data.running_redirection = false;
+            thread_data.current_opcode_index = 0;
             //rip = last_redirection_start_point + 2;
-            memcpy((void*)last_redirection_start_point, original_data.data(), original_data.size());
-            VirtualProtect((void*)last_redirection_start_point, sizeof(redirected_opcodes), old_protect_value, &old_protect_value);
-            std::cout << fmt::format("Finished redirection, setting RIP to {:X}\n", rip);
-            return g_state->trace_lookup_hook.unsafe_call<void*>(arch, unk);
+            //memcpy((void*)thread_data.last_redirection_start_point, thread_data.original_data.data(), thread_data.original_data.size());
+            // for loop it 
+            for (size_t i = 0; i < thread_data.original_data.size(); i++) {
+                ((uint8_t*)thread_data.last_redirection_start_point)[i] = thread_data.original_data[i];
+            }
+
+            //VirtualProtect((void*)thread_data.last_redirection_start_point, thread_data.original_data.size(), thread_data.old_protect_value, &thread_data.old_protect_value);
+            //std::cout << fmt::format("Finished redirection, setting RIP to {:X}\n", rip);
+            auto res = g_state->trace_lookup_hook.unsafe_call<void*>(arch, unk);
+
+            thread_data_mutex.unlock();
+
+            return res;
         }
+
+        thread_data.hit_first_redirect = true;
 
         //rip = (uintptr_t)last_redirection_start_point + (current_opcode_index * 4);
     }
 
     // here
     if (*(uint8_t*)rip == 0x41 && *(uint8_t*)(rip + 1) == 0x90) {
-        original_data.resize(sizeof(redirected_opcodes));
-        std::cout << fmt::format("[trace_lookup_hook] Found xchg eax, r8d! RIP: {:X}, REDIRECTING...\n", rip);
-        running_redirection = true;
-        last_redirection_start_point = rip;
-        current_opcode_index = 0;
+        thread_data.original_data.clear();
+        thread_data.original_data.resize(sizeof(redirected_opcodes));
+        //memset(thread_data.original_data.data(), 0, thread_data.original_data.size());
+        //std::cout << fmt::format("[trace_lookup_hook] Found xchg eax, r8d! RIP: {:X}, REDIRECTING...\n", rip);
+        thread_data.running_redirection = true;
+        thread_data.last_redirection_start_point = rip;
+        thread_data.current_opcode_index = 0;
         //rip = (uintptr_t)&redirected_opcodes[current_opcode_index];
-        memcpy(original_data.data(), (void*)rip, sizeof(original_data));
-        VirtualProtect((void*)rip, sizeof(original_data), PAGE_EXECUTE_READWRITE, &old_protect_value);
-        memcpy((void*)rip, redirected_opcodes, sizeof(redirected_opcodes));
+        //memcpy(thread_data.original_data.data(), (void*)rip, thread_data.original_data.size());
+        for (size_t i = 0; i < thread_data.original_data.size(); i++) {
+            thread_data.original_data[i] = ((uint8_t*)rip)[i];
+        }
+        VirtualProtect((void*)rip, thread_data.original_data.size(), PAGE_EXECUTE_READWRITE, &thread_data.old_protect_value);
+        memcpy((void*)rip, redirected_opcodes, thread_data.original_data.size());
     } else if (*(uint8_t*)rip == 0x49 && *(uint8_t*)(rip + 1) == 0x90) {
-        original_data.resize(sizeof(redirected_opcodes_4990));
-        std::cout << fmt::format("[trace_lookup_hook] Found xchg rax, r8! RIP: {:X}, REDIRECTING...\n", rip);
-        running_redirection = true;
-        last_redirection_start_point = rip;
-        current_opcode_index = 0;
+        thread_data.original_data.clear();
+        thread_data.original_data.resize(sizeof(redirected_opcodes_4990));
+        //memset(thread_data.original_data.data(), 0, thread_data.original_data.size());
+        //std::cout << fmt::format("[trace_lookup_hook] Found xchg rax, r8! RIP: {:X}, REDIRECTING...\n", rip);
+        thread_data.running_redirection = true;
+        thread_data.last_redirection_start_point = rip;
+        thread_data.current_opcode_index = 0;
         //rip = (uintptr_t)&redirected_opcodes[current_opcode_index];
-        memcpy(original_data.data(), (void*)rip, sizeof(original_data));
-        VirtualProtect((void*)rip, sizeof(original_data), PAGE_EXECUTE_READWRITE, &old_protect_value);
-        memcpy((void*)rip, redirected_opcodes_4990, sizeof(redirected_opcodes_4990));
+        //memcpy(thread_data.original_data.data(), (void*)rip, thread_data.original_data.size());
+        for (size_t i = 0; i < thread_data.original_data.size(); i++) {
+            thread_data.original_data[i] = ((uint8_t*)rip)[i];
+        }
+        VirtualProtect((void*)rip, thread_data.original_data.size(), PAGE_EXECUTE_READWRITE, &thread_data.old_protect_value);
+        memcpy((void*)rip, redirected_opcodes_4990, thread_data.original_data.size());
     }
 
     auto res = g_state->trace_lookup_hook.unsafe_call<void*>(arch, unk);

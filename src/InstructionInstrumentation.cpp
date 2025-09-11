@@ -8,793 +8,576 @@
 
 namespace ttd::instrumentation {
 uint64_t HandleABM1Operand_0_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleABM1Operand_0_0_( at RIP {:#x}\n", rip);
     return g_hook_ABM1Operand_0_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleABM1Operand_1_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleABM1Operand_1_0_( at RIP {:#x}\n", rip);
     return g_hook_ABM1Operand_1_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleABM1Operand_2_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleABM1Operand_2_0_( at RIP {:#x}\n", rip);
     return g_hook_ABM1Operand_2_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleABM1Operand_6_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleABM1Operand_6_8_( at RIP {:#x}\n", rip);
     return g_hook_ABM1Operand_6_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleABM1Operand_7_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleABM1Operand_7_8_( at RIP {:#x}\n", rip);
     return g_hook_ABM1Operand_7_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleABM1Operand_8_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleABM1Operand_8_8_( at RIP {:#x}\n", rip);
     return g_hook_ABM1Operand_8_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleABM2Operand_4_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleABM2Operand_4_8_( at RIP {:#x}\n", rip);
     return g_hook_ABM2Operand_4_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleABM2Operand_6_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleABM2Operand_6_8_( at RIP {:#x}\n", rip);
     return g_hook_ABM2Operand_6_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleABM2Operand_7_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleABM2Operand_7_8_( at RIP {:#x}\n", rip);
     return g_hook_ABM2Operand_7_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleABM2Operand_8_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleABM2Operand_8_8_( at RIP {:#x}\n", rip);
     return g_hook_ABM2Operand_8_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleADX_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleADX_0_( at RIP {:#x}\n", rip);
     return g_hook_ADX_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleADX_1_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleADX_1_( at RIP {:#x}\n", rip);
     return g_hook_ADX_1_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleAESKeyGenAssist_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleAESKeyGenAssist_0_( at RIP {:#x}\n", rip);
     return g_hook_AESKeyGenAssist_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleAESKeyGenAssist_1_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleAESKeyGenAssist_1_( at RIP {:#x}\n", rip);
     return g_hook_AESKeyGenAssist_1_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleANDN_BMI1(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleANDN_BMI1( at RIP {:#x}\n", rip);
     return g_hook_ANDN_BMI1.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleBLENDPD_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleBLENDPD_0_( at RIP {:#x}\n", rip);
     return g_hook_BLENDPD_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleBLENDPD_1_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleBLENDPD_1_( at RIP {:#x}\n", rip);
     return g_hook_BLENDPD_1_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleBLENDPS_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleBLENDPS_0_( at RIP {:#x}\n", rip);
     return g_hook_BLENDPS_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleBLENDPS_1_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleBLENDPS_1_( at RIP {:#x}\n", rip);
     return g_hook_BLENDPS_1_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleBLENDVAvx_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleBLENDVAvx_0_( at RIP {:#x}\n", rip);
     return g_hook_BLENDVAvx_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleBLENDVAvx_1_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleBLENDVAvx_1_( at RIP {:#x}\n", rip);
     return g_hook_BLENDVAvx_1_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleBLENDVAvx_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleBLENDVAvx_2_( at RIP {:#x}\n", rip);
     return g_hook_BLENDVAvx_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleBSWAP(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleBSWAP( at RIP {:#x}\n", rip);
     return g_hook_BSWAP.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleBitScanInstruction_120_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleBitScanInstruction_120_( at RIP {:#x}\n", rip);
     return g_hook_BitScanInstruction_120_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleBitScanInstruction_121_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleBitScanInstruction_121_( at RIP {:#x}\n", rip);
     return g_hook_BitScanInstruction_121_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleBitTestInstruction(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleBitTestInstruction( at RIP {:#x}\n", rip);
     return g_hook_BitTestInstruction.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleCALL(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleCALL( at RIP {:#x}\n", rip);
     return g_hook_CALL.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleCBW(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleCBW( at RIP {:#x}\n", rip);
     return g_hook_CBW.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleCDQ(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleCDQ( at RIP {:#x}\n", rip);
     return g_hook_CDQ.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleCDQE(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleCDQE( at RIP {:#x}\n", rip);
     return g_hook_CDQE.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleCLC(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleCLC( at RIP {:#x}\n", rip);
     return g_hook_CLC.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleCLD(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleCLD( at RIP {:#x}\n", rip);
     return g_hook_CLD.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleCLMUL_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleCLMUL_0_( at RIP {:#x}\n", rip);
     return g_hook_CLMUL_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleCLMUL_1_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleCLMUL_1_( at RIP {:#x}\n", rip);
     return g_hook_CLMUL_1_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleCMC(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleCMC( at RIP {:#x}\n", rip);
     return g_hook_CMC.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleCMP(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleCMP( at RIP {:#x}\n", rip);
     return g_hook_CMP.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleCMPXCHG(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleCMPXCHG( at RIP {:#x}\n", rip);
     return g_hook_CMPXCHG.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleCMPXCHG16B(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleCMPXCHG16B( at RIP {:#x}\n", rip);
     return g_hook_CMPXCHG16B.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleCMPXCHG8B(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleCMPXCHG8B( at RIP {:#x}\n", rip);
     return g_hook_CMPXCHG8B.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleCMPxx_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleCMPxx_0_( at RIP {:#x}\n", rip);
     return g_hook_CMPxx_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleCMPxx_1_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleCMPxx_1_( at RIP {:#x}\n", rip);
     return g_hook_CMPxx_1_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleCMPxx_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleCMPxx_2_( at RIP {:#x}\n", rip);
     return g_hook_CMPxx_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleCMPxx_3_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleCMPxx_3_( at RIP {:#x}\n", rip);
     return g_hook_CMPxx_3_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleCOMIS(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleCOMIS( at RIP {:#x}\n", rip);
     return g_hook_COMIS.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleCPUID(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleCPUID( at RIP {:#x}\n", rip);
     return g_hook_CPUID.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleCQO(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleCQO( at RIP {:#x}\n", rip);
     return g_hook_CQO.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleCRC32(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleCRC32( at RIP {:#x}\n", rip);
     return g_hook_CRC32.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleCVTPI2xxMMx_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleCVTPI2xxMMx_0_( at RIP {:#x}\n", rip);
     return g_hook_CVTPI2xxMMx_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleCVTPI2xxMMx_1_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleCVTPI2xxMMx_1_( at RIP {:#x}\n", rip);
     return g_hook_CVTPI2xxMMx_1_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleCVTxx2PIMMx_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleCVTxx2PIMMx_2_( at RIP {:#x}\n", rip);
     return g_hook_CVTxx2PIMMx_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleCVTxx2PIMMx_3_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleCVTxx2PIMMx_3_( at RIP {:#x}\n", rip);
     return g_hook_CVTxx2PIMMx_3_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleCVTxx2PIMMx_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleCVTxx2PIMMx_4_( at RIP {:#x}\n", rip);
     return g_hook_CVTxx2PIMMx_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleCVTxx2PIMMx_5_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleCVTxx2PIMMx_5_( at RIP {:#x}\n", rip);
     return g_hook_CVTxx2PIMMx_5_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleCWD(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleCWD( at RIP {:#x}\n", rip);
     return g_hook_CWD.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleCWDE(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleCWDE( at RIP {:#x}\n", rip);
     return g_hook_CWDE.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleConditionalJump_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleConditionalJump_0_( at RIP {:#x}\n", rip);
     return g_hook_ConditionalJump_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleConditionalJump_10_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleConditionalJump_10_( at RIP {:#x}\n", rip);
     return g_hook_ConditionalJump_10_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleConditionalJump_11_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleConditionalJump_11_( at RIP {:#x}\n", rip);
     return g_hook_ConditionalJump_11_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleConditionalJump_12_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleConditionalJump_12_( at RIP {:#x}\n", rip);
     return g_hook_ConditionalJump_12_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleConditionalJump_13_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleConditionalJump_13_( at RIP {:#x}\n", rip);
     return g_hook_ConditionalJump_13_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleConditionalJump_14_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleConditionalJump_14_( at RIP {:#x}\n", rip);
     return g_hook_ConditionalJump_14_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleConditionalJump_15_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleConditionalJump_15_( at RIP {:#x}\n", rip);
     return g_hook_ConditionalJump_15_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleConditionalJump_1_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleConditionalJump_1_( at RIP {:#x}\n", rip);
     return g_hook_ConditionalJump_1_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleConditionalJump_7_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleConditionalJump_7_( at RIP {:#x}\n", rip);
     return g_hook_ConditionalJump_7_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleConditionalJump_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleConditionalJump_8_( at RIP {:#x}\n", rip);
     return g_hook_ConditionalJump_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleConditionalJump_9_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleConditionalJump_9_( at RIP {:#x}\n", rip);
     return g_hook_ConditionalJump_9_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleConditionalMove_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleConditionalMove_0_( at RIP {:#x}\n", rip);
     return g_hook_ConditionalMove_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleConditionalMove_10_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleConditionalMove_10_( at RIP {:#x}\n", rip);
     return g_hook_ConditionalMove_10_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleConditionalMove_11_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleConditionalMove_11_( at RIP {:#x}\n", rip);
     return g_hook_ConditionalMove_11_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleConditionalMove_12_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleConditionalMove_12_( at RIP {:#x}\n", rip);
     return g_hook_ConditionalMove_12_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleConditionalMove_13_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleConditionalMove_13_( at RIP {:#x}\n", rip);
     return g_hook_ConditionalMove_13_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleConditionalMove_14_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleConditionalMove_14_( at RIP {:#x}\n", rip);
     return g_hook_ConditionalMove_14_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleConditionalMove_15_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleConditionalMove_15_( at RIP {:#x}\n", rip);
     return g_hook_ConditionalMove_15_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleConditionalMove_1_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleConditionalMove_1_( at RIP {:#x}\n", rip);
     return g_hook_ConditionalMove_1_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleConditionalMove_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleConditionalMove_2_( at RIP {:#x}\n", rip);
     return g_hook_ConditionalMove_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleConditionalMove_3_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleConditionalMove_3_( at RIP {:#x}\n", rip);
     return g_hook_ConditionalMove_3_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleConditionalMove_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleConditionalMove_4_( at RIP {:#x}\n", rip);
     return g_hook_ConditionalMove_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleConditionalMove_5_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleConditionalMove_5_( at RIP {:#x}\n", rip);
     return g_hook_ConditionalMove_5_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleConditionalMove_6_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleConditionalMove_6_( at RIP {:#x}\n", rip);
     return g_hook_ConditionalMove_6_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleConditionalMove_7_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleConditionalMove_7_( at RIP {:#x}\n", rip);
     return g_hook_ConditionalMove_7_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleConditionalMove_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleConditionalMove_8_( at RIP {:#x}\n", rip);
     return g_hook_ConditionalMove_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleConditionalMove_9_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleConditionalMove_9_( at RIP {:#x}\n", rip);
     return g_hook_ConditionalMove_9_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleDPPD_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleDPPD_0_( at RIP {:#x}\n", rip);
     return g_hook_DPPD_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleDPPD_1_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleDPPD_1_( at RIP {:#x}\n", rip);
     return g_hook_DPPD_1_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleDPPS_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleDPPS_0_( at RIP {:#x}\n", rip);
     return g_hook_DPPS_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleDPPS_1_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleDPPS_1_( at RIP {:#x}\n", rip);
     return g_hook_DPPS_1_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleDivide_101_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleDivide_101_( at RIP {:#x}\n", rip);
     return g_hook_Divide_101_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleDivide_102_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleDivide_102_( at RIP {:#x}\n", rip);
     return g_hook_Divide_102_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleDoubleShiftInstruction_116_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleDoubleShiftInstruction_116_( at RIP {:#x}\n", rip);
     return g_hook_DoubleShiftInstruction_116_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleDoubleShiftInstruction_117_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleDoubleShiftInstruction_117_( at RIP {:#x}\n", rip);
     return g_hook_DoubleShiftInstruction_117_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleEMMS(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleEMMS( at RIP {:#x}\n", rip);
     return g_hook_EMMS.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleENTER(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleENTER( at RIP {:#x}\n", rip);
     return g_hook_ENTER.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleEXTRACTPS(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleEXTRACTPS( at RIP {:#x}\n", rip);
     return g_hook_EXTRACTPS.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleEXTRQ(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleEXTRQ( at RIP {:#x}\n", rip);
     return g_hook_EXTRQ.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleFENCE_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleFENCE_0_( at RIP {:#x}\n", rip);
     return g_hook_FENCE_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleFENCE_1_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleFENCE_1_( at RIP {:#x}\n", rip);
     return g_hook_FENCE_1_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleFENCE_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleFENCE_2_( at RIP {:#x}\n", rip);
     return g_hook_FENCE_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleFILD(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleFILD( at RIP {:#x}\n", rip);
     return g_hook_FILD.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleFIST(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleFIST( at RIP {:#x}\n", rip);
     return g_hook_FIST.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleFISTP(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleFISTP( at RIP {:#x}\n", rip);
     return g_hook_FISTP.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleFLD(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleFLD( at RIP {:#x}\n", rip);
     return g_hook_FLD.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleFLD1(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleFLD1( at RIP {:#x}\n", rip);
     return g_hook_FLD1.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleFLDCW(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleFLDCW( at RIP {:#x}\n", rip);
     return g_hook_FLDCW.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleFLDZ(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleFLDZ( at RIP {:#x}\n", rip);
     return g_hook_FLDZ.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleFNCLEX(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleFNCLEX( at RIP {:#x}\n", rip);
     return g_hook_FNCLEX.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleFNINIT(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleFNINIT( at RIP {:#x}\n", rip);
     return g_hook_FNINIT.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleFNSTCW(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleFNSTCW( at RIP {:#x}\n", rip);
     return g_hook_FNSTCW.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleFNSTSW(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleFNSTSW( at RIP {:#x}\n", rip);
     return g_hook_FNSTSW.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleFST(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleFST( at RIP {:#x}\n", rip);
     return g_hook_FST.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleFSTP(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleFSTP( at RIP {:#x}\n", rip);
     return g_hook_FSTP.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleFXRSTOR(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleFXRSTOR( at RIP {:#x}\n", rip);
     return g_hook_FXRSTOR.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleFXSAVE(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleFXSAVE( at RIP {:#x}\n", rip);
     return g_hook_FXSAVE.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleINSERTPS_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleINSERTPS_0_( at RIP {:#x}\n", rip);
     return g_hook_INSERTPS_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleINSERTPS_1_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleINSERTPS_1_( at RIP {:#x}\n", rip);
     return g_hook_INSERTPS_1_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleINSERTQ(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleINSERTQ( at RIP {:#x}\n", rip);
     return g_hook_INSERTQ.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleINT(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleINT( at RIP {:#x}\n", rip);
     return g_hook_INT.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleIRETQ(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleIRETQ( at RIP {:#x}\n", rip);
     return g_hook_IRETQ.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleIncrementDecrementInstruction_85_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleIncrementDecrementInstruction_85_( at RIP {:#x}\n", rip);
     return g_hook_IncrementDecrementInstruction_85_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleIncrementDecrementInstruction_94_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleIncrementDecrementInstruction_94_( at RIP {:#x}\n", rip);
     return g_hook_IncrementDecrementInstruction_94_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleJAE(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleJAE( at RIP {:#x}\n", rip);
     return g_hook_JAE.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleJB(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleJB( at RIP {:#x}\n", rip);
     return g_hook_JB.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleJBE(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleJBE( at RIP {:#x}\n", rip);
     return g_hook_JBE.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleJE(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleJE( at RIP {:#x}\n", rip);
     return g_hook_JE.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleJERCX(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleJERCX( at RIP {:#x}\n", rip);
     return g_hook_JERCX.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleJMP(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleJMP( at RIP {:#x}\n", rip);
     return g_hook_JMP.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleJNE(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleJNE( at RIP {:#x}\n", rip);
     return g_hook_JNE.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleLAHF(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleLAHF( at RIP {:#x}\n", rip);
     return g_hook_LAHF.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleLDMXCSR(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleLDMXCSR( at RIP {:#x}\n", rip);
     return g_hook_LDMXCSR.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleLEA(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleLEA( at RIP {:#x}\n", rip);
     return g_hook_LEA.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleLEAVE(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleLEAVE( at RIP {:#x}\n", rip);
     return g_hook_LEAVE.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleLoop_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleLoop_0_( at RIP {:#x}\n", rip);
     return g_hook_Loop_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleLoop_1_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleLoop_1_( at RIP {:#x}\n", rip);
     return g_hook_Loop_1_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleLoop_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleLoop_2_( at RIP {:#x}\n", rip);
     return g_hook_Loop_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleMOV(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleMOV( at RIP {:#x}\n", rip);
-    auto ti = TTD::ThreadInfo::get();
-
-    if (ti != nullptr) {
-        auto rip = ti->get_register_value<uint64_t>(TTD::Rip);
-        std::cout << fmt::format("MOV instruction at RIP: {:#x}\n", rip);
-    }
-
-
-
     return g_hook_MOV.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleMOVBE(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleMOVBE( at RIP {:#x}\n", rip);
     return g_hook_MOVBE.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleMOVDDUP_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleMOVDDUP_0_( at RIP {:#x}\n", rip);
     return g_hook_MOVDDUP_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleMOVDDUP_1_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleMOVDDUP_1_( at RIP {:#x}\n", rip);
     return g_hook_MOVDDUP_1_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleMOVDIRI(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleMOVDIRI( at RIP {:#x}\n", rip);
     return g_hook_MOVDIRI.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleMOVDQU(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleMOVDQU( at RIP {:#x}\n", rip);
     return g_hook_MOVDQU.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleMOVDQU_Unaligned(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleMOVDQU_Unaligned( at RIP {:#x}\n", rip);
     return g_hook_MOVDQU_Unaligned.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleMOVD_MOVQ(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleMOVD_MOVQ( at RIP {:#x}\n", rip);
     return g_hook_MOVD_MOVQ.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleMOVHPS_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleMOVHPS_0_( at RIP {:#x}\n", rip);
     return g_hook_MOVHPS_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleMOVHPS_1_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleMOVHPS_1_( at RIP {:#x}\n", rip);
     return g_hook_MOVHPS_1_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleMOVLPS_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleMOVLPS_0_( at RIP {:#x}\n", rip);
     return g_hook_MOVLPS_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleMOVLPS_1_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleMOVLPS_1_( at RIP {:#x}\n", rip);
     return g_hook_MOVLPS_1_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleMOVMSK_32_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleMOVMSK_32_( at RIP {:#x}\n", rip);
     return g_hook_MOVMSK_32_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleMOVMSK_64_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleMOVMSK_64_( at RIP {:#x}\n", rip);
     return g_hook_MOVMSK_64_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleMOVMSK_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleMOVMSK_8_( at RIP {:#x}\n", rip);
     return g_hook_MOVMSK_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleMOVNTDQA(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleMOVNTDQA( at RIP {:#x}\n", rip);
     return g_hook_MOVNTDQA.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleMOVNTSx_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleMOVNTSx_8_( at RIP {:#x}\n", rip);
     return g_hook_MOVNTSx_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleMOVQMmx(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleMOVQMmx( at RIP {:#x}\n", rip);
     return g_hook_MOVQMmx.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleMOVSD_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleMOVSD_0_( at RIP {:#x}\n", rip);
     return g_hook_MOVSD_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleMOVSD_1_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleMOVSD_1_( at RIP {:#x}\n", rip);
     return g_hook_MOVSD_1_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleMOVSS_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleMOVSS_0_( at RIP {:#x}\n", rip);
     return g_hook_MOVSS_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleMOVSS_1_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleMOVSS_1_( at RIP {:#x}\n", rip);
     return g_hook_MOVSS_1_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleMOVSX(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleMOVSX( at RIP {:#x}\n", rip);
     return g_hook_MOVSX.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleMOVSxDUP_0_160_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleMOVSxDUP_0_160_( at RIP {:#x}\n", rip);
     return g_hook_MOVSxDUP_0_160_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleMOVSxDUP_0_245_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleMOVSxDUP_0_245_( at RIP {:#x}\n", rip);
     return g_hook_MOVSxDUP_0_245_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleMOVSxDUP_1_160_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleMOVSxDUP_1_160_( at RIP {:#x}\n", rip);
     return g_hook_MOVSxDUP_1_160_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleMOVSxDUP_1_245_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleMOVSxDUP_1_245_( at RIP {:#x}\n", rip);
     return g_hook_MOVSxDUP_1_245_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleMOVZX(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleMOVZX( at RIP {:#x}\n", rip);
     return g_hook_MOVZX.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleMULX_BMI2(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleMULX_BMI2( at RIP {:#x}\n", rip);
     return g_hook_MULX_BMI2.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleMultiply_100_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleMultiply_100_( at RIP {:#x}\n", rip);
     return g_hook_Multiply_100_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleMultiply_99_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleMultiply_99_( at RIP {:#x}\n", rip);
     return g_hook_Multiply_99_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleNEG(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleNEG( at RIP {:#x}\n", rip);
-    auto ti = TTD::ThreadInfo::get();
-    if (ti != nullptr) {
-        auto rip = ti->get_register_value<uint64_t>(TTD::Rip);
-        std::cout << fmt::format("NEG instruction at RIP: {:#x}\n", rip);
-    }
-
-    auto result = g_hook_NEG.unsafe_call<uint64_t>(decoder, instr);
-
-    return result;
+    return g_hook_NEG.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleNOT(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleNOT( at RIP {:#x}\n", rip);
     return g_hook_NOT.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandlePABS_28_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandlePABS_28_0_( at RIP {:#x}\n", rip);
     return g_hook_PABS_28_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandlePABS_29_1_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandlePABS_29_1_( at RIP {:#x}\n", rip);
     return g_hook_PABS_29_1_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandlePABS_30_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandlePABS_30_2_( at RIP {:#x}\n", rip);
     return g_hook_PABS_30_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandlePALIGNR(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandlePALIGNR( at RIP {:#x}\n", rip);
     return g_hook_PALIGNR.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandlePCMPxSTRx_0_0_1_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandlePCMPxSTRx_0_0_1_( at RIP {:#x}\n", rip);
     return g_hook_PCMPxSTRx_0_0_1_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandlePCMPxSTRx_0_1_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandlePCMPxSTRx_0_1_0_( at RIP {:#x}\n", rip);
     return g_hook_PCMPxSTRx_0_1_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandlePCMPxSTRx_0_1_1_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandlePCMPxSTRx_0_1_1_( at RIP {:#x}\n", rip);
     return g_hook_PCMPxSTRx_0_1_1_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandlePCMPxSTRx_1_0_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandlePCMPxSTRx_1_0_0_( at RIP {:#x}\n", rip);
     return g_hook_PCMPxSTRx_1_0_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandlePCMPxSTRx_1_0_1_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandlePCMPxSTRx_1_0_1_( at RIP {:#x}\n", rip);
     return g_hook_PCMPxSTRx_1_0_1_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandlePCMPxSTRx_1_1_1_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandlePCMPxSTRx_1_1_1_( at RIP {:#x}\n", rip);
     return g_hook_PCMPxSTRx_1_1_1_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandlePEXTR_16_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandlePEXTR_16_( at RIP {:#x}\n", rip);
     return g_hook_PEXTR_16_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandlePEXTR_32_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandlePEXTR_32_( at RIP {:#x}\n", rip);
     return g_hook_PEXTR_32_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandlePEXTR_64_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandlePEXTR_64_( at RIP {:#x}\n", rip);
     return g_hook_PEXTR_64_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandlePEXTR_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandlePEXTR_8_( at RIP {:#x}\n", rip);
     return g_hook_PEXTR_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandlePINSR_0_16_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandlePINSR_0_16_( at RIP {:#x}\n", rip);
     return g_hook_PINSR_0_16_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandlePINSR_0_32_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandlePINSR_0_32_( at RIP {:#x}\n", rip);
     return g_hook_PINSR_0_32_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandlePINSR_0_64_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandlePINSR_0_64_( at RIP {:#x}\n", rip);
     return g_hook_PINSR_0_64_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandlePINSR_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandlePINSR_0_8_( at RIP {:#x}\n", rip);
     return g_hook_PINSR_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandlePINSR_1_16_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandlePINSR_1_16_( at RIP {:#x}\n", rip);
     return g_hook_PINSR_1_16_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandlePINSR_1_32_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandlePINSR_1_32_( at RIP {:#x}\n", rip);
     return g_hook_PINSR_1_32_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandlePINSR_1_64_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandlePINSR_1_64_( at RIP {:#x}\n", rip);
     return g_hook_PINSR_1_64_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandlePINSR_1_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandlePINSR_1_8_( at RIP {:#x}\n", rip);
     return g_hook_PINSR_1_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandlePOP(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandlePOP( at RIP {:#x}\n", rip);
-    auto ti = TTD::ThreadInfo::get();
-
-    if (ti != nullptr) {
-        auto rip = ti->get_register_value<uint64_t>(TTD::Rip);
-
-        //spdlog::info("Handling POP at RIP: {:#x}", rip);
-        std::cout << fmt::format("Handling POP at RIP: {:#x}\n", rip);
-    }
-
     return g_hook_POP.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandlePOPF(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandlePOPF( at RIP {:#x}\n", rip);
     return g_hook_POPF.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandlePOPFD(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandlePOPFD( at RIP {:#x}\n", rip);
     //spdlog::info("Handling POPFD");
 
     auto ti = TTD::ThreadInfo::get();
@@ -820,2756 +603,2756 @@ uint64_t HandlePOPFD(uintptr_t decoder, TTD::DecodedInstruction* instr) {
     return result;
 }
 uint64_t HandlePSHUFB(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandlePSHUFB( at RIP {:#x}\n", rip);
+ 
     return g_hook_PSHUFB.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandlePSHUFW(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandlePSHUFW( at RIP {:#x}\n", rip);
+ 
     return g_hook_PSHUFW.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandlePSLL_SRA_SRL_28_28_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandlePSLL_SRA_SRL_28_28_( at RIP {:#x}\n", rip);
+ 
     return g_hook_PSLL_SRA_SRL_28_28_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandlePSLL_SRA_SRL_29_29_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandlePSLL_SRA_SRL_29_29_( at RIP {:#x}\n", rip);
+ 
     return g_hook_PSLL_SRA_SRL_29_29_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandlePSLL_SRA_SRL_30_30_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandlePSLL_SRA_SRL_30_30_( at RIP {:#x}\n", rip);
+ 
     return g_hook_PSLL_SRA_SRL_30_30_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandlePSLL_SRA_SRL_31_31_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandlePSLL_SRA_SRL_31_31_( at RIP {:#x}\n", rip);
+ 
     return g_hook_PSLL_SRA_SRL_31_31_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandlePSLL_SRA_SRL_32_32_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandlePSLL_SRA_SRL_32_32_( at RIP {:#x}\n", rip);
+ 
     return g_hook_PSLL_SRA_SRL_32_32_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandlePSLL_SRA_SRL_33_33_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandlePSLL_SRA_SRL_33_33_( at RIP {:#x}\n", rip);
+ 
     return g_hook_PSLL_SRA_SRL_33_33_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandlePSLL_SRA_SRL_34_34_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandlePSLL_SRA_SRL_34_34_( at RIP {:#x}\n", rip);
+ 
     return g_hook_PSLL_SRA_SRL_34_34_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandlePSLL_SRA_SRL_35_35_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandlePSLL_SRA_SRL_35_35_( at RIP {:#x}\n", rip);
+ 
     return g_hook_PSLL_SRA_SRL_35_35_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandlePTEST_0_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandlePTEST_0_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_PTEST_0_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandlePTEST_1_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandlePTEST_1_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_PTEST_1_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandlePTEST_1_1_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandlePTEST_1_1_( at RIP {:#x}\n", rip);
+ 
     return g_hook_PTEST_1_1_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandlePTEST_1_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandlePTEST_1_2_( at RIP {:#x}\n", rip);
+ 
     return g_hook_PTEST_1_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandlePUSH(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandlePUSH( at RIP {:#x}\n", rip);
+ 
     return g_hook_PUSH.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandlePUSHF(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandlePUSHF( at RIP {:#x}\n", rip);
+ 
     return g_hook_PUSHF.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandlePUSHFD(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandlePUSHFD( at RIP {:#x}\n", rip);
+ 
     return g_hook_PUSHFD.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelFMA3_0_11_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelFMA3_0_11_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelFMA3_0_11_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelFMA3_0_12_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelFMA3_0_12_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelFMA3_0_12_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelFMA3_0_15_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelFMA3_0_15_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelFMA3_0_15_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelFMA3_0_16_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelFMA3_0_16_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelFMA3_0_16_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelFMA3_0_19_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelFMA3_0_19_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelFMA3_0_19_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelFMA3_0_20_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelFMA3_0_20_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelFMA3_0_20_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelFMA3_0_21_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelFMA3_0_21_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelFMA3_0_21_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelFMA3_0_22_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelFMA3_0_22_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelFMA3_0_22_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelFMA3_0_3_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelFMA3_0_3_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelFMA3_0_3_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelFMA3_0_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelFMA3_0_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelFMA3_0_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelFMA3_0_7_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelFMA3_0_7_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelFMA3_0_7_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelFMA3_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelFMA3_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelFMA3_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelFMA3_1_11_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelFMA3_1_11_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelFMA3_1_11_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelFMA3_1_12_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelFMA3_1_12_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelFMA3_1_12_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelFMA3_1_15_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelFMA3_1_15_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelFMA3_1_15_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelFMA3_1_16_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelFMA3_1_16_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelFMA3_1_16_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelFMA3_1_19_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelFMA3_1_19_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelFMA3_1_19_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelFMA3_1_20_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelFMA3_1_20_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelFMA3_1_20_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelFMA3_1_21_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelFMA3_1_21_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelFMA3_1_21_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelFMA3_1_22_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelFMA3_1_22_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelFMA3_1_22_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelFMA3_1_3_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelFMA3_1_3_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelFMA3_1_3_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelFMA3_1_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelFMA3_1_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelFMA3_1_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelFMA3_1_7_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelFMA3_1_7_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelFMA3_1_7_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelFMA3_1_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelFMA3_1_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelFMA3_1_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelFMA3_2_11_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelFMA3_2_11_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelFMA3_2_11_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelFMA3_2_12_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelFMA3_2_12_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelFMA3_2_12_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelFMA3_2_15_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelFMA3_2_15_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelFMA3_2_15_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelFMA3_2_16_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelFMA3_2_16_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelFMA3_2_16_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelFMA3_2_19_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelFMA3_2_19_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelFMA3_2_19_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelFMA3_2_20_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelFMA3_2_20_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelFMA3_2_20_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelFMA3_2_21_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelFMA3_2_21_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelFMA3_2_21_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelFMA3_2_22_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelFMA3_2_22_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelFMA3_2_22_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelFMA3_2_3_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelFMA3_2_3_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelFMA3_2_3_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelFMA3_2_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelFMA3_2_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelFMA3_2_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelFMA3_2_7_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelFMA3_2_7_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelFMA3_2_7_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelFMA3_2_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelFMA3_2_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelFMA3_2_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd1OperandAndImmToDestinationAvx_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd1OperandAndImmToDestinationAvx_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd1OperandAndImmToDestinationAvx_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd1OperandAndImmToDestinationAvx_1_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd1OperandAndImmToDestinationAvx_1_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd1OperandAndImmToDestinationAvx_1_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd1OperandToDestinationAvxXY_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd1OperandToDestinationAvxXY_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd1OperandToDestinationAvxXY_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd1OperandToDestinationAvxXY_5_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd1OperandToDestinationAvxXY_5_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd1OperandToDestinationAvxXY_5_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd1OperandToDestinationAvxXY_6_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd1OperandToDestinationAvxXY_6_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd1OperandToDestinationAvxXY_6_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd1OperandToDestinationAvxYX_1_0_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd1OperandToDestinationAvxYX_1_0_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd1OperandToDestinationAvxYX_1_0_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd1OperandToDestinationAvxYX_31_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd1OperandToDestinationAvxYX_31_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd1OperandToDestinationAvxYX_31_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd1OperandToDestinationAvxYX_32_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd1OperandToDestinationAvxYX_32_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd1OperandToDestinationAvxYX_32_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd1OperandToDestinationAvxYX_33_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd1OperandToDestinationAvxYX_33_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd1OperandToDestinationAvxYX_33_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd1OperandToDestinationAvxYX_34_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd1OperandToDestinationAvxYX_34_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd1OperandToDestinationAvxYX_34_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd1OperandToDestinationAvxYX_35_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd1OperandToDestinationAvxYX_35_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd1OperandToDestinationAvxYX_35_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd1OperandToDestinationAvxYX_36_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd1OperandToDestinationAvxYX_36_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd1OperandToDestinationAvxYX_36_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd1OperandToDestinationAvxYX_37_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd1OperandToDestinationAvxYX_37_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd1OperandToDestinationAvxYX_37_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd1OperandToDestinationAvxYX_38_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd1OperandToDestinationAvxYX_38_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd1OperandToDestinationAvxYX_38_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd1OperandToDestinationAvxYX_39_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd1OperandToDestinationAvxYX_39_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd1OperandToDestinationAvxYX_39_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd1OperandToDestinationAvxYX_40_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd1OperandToDestinationAvxYX_40_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd1OperandToDestinationAvxYX_40_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd1OperandToDestinationAvxYX_41_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd1OperandToDestinationAvxYX_41_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd1OperandToDestinationAvxYX_41_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd1OperandToDestinationAvxYX_42_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd1OperandToDestinationAvxYX_42_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd1OperandToDestinationAvxYX_42_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd1OperandToDestinationAvxYX_64_8_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd1OperandToDestinationAvxYX_64_8_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd1OperandToDestinationAvxYX_64_8_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd1OperandToDestinationAvxYX_7_0_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd1OperandToDestinationAvxYX_7_0_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd1OperandToDestinationAvxYX_7_0_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd1OperandToDestinationAvx_0_0_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd1OperandToDestinationAvx_0_0_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd1OperandToDestinationAvx_0_0_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd1OperandToDestinationAvx_20_2147483648_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd1OperandToDestinationAvx_20_2147483648_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd1OperandToDestinationAvx_20_2147483648_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd1OperandToDestinationAvx_21_0_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd1OperandToDestinationAvx_21_0_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd1OperandToDestinationAvx_21_0_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd1OperandToDestinationAvx_22_2147483648_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd1OperandToDestinationAvx_22_2147483648_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd1OperandToDestinationAvx_22_2147483648_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd1OperandToDestinationAvx_23_0_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd1OperandToDestinationAvx_23_0_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd1OperandToDestinationAvx_23_0_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd1OperandToDestinationAvx_27_2_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd1OperandToDestinationAvx_27_2_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd1OperandToDestinationAvx_27_2_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd1OperandToDestinationAvx_28_2_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd1OperandToDestinationAvx_28_2_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd1OperandToDestinationAvx_28_2_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd1OperandToDestinationAvx_29_2_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd1OperandToDestinationAvx_29_2_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd1OperandToDestinationAvx_29_2_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd1OperandToDestinationAvx_2_0_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd1OperandToDestinationAvx_2_0_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd1OperandToDestinationAvx_2_0_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd1OperandToDestinationAvx_30_2_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd1OperandToDestinationAvx_30_2_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd1OperandToDestinationAvx_30_2_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd1OperandToDestinationAvx_3_0_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd1OperandToDestinationAvx_3_0_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd1OperandToDestinationAvx_3_0_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandAndImmToDestinationAvx_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandAndImmToDestinationAvx_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandAndImmToDestinationAvx_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandAndImmToDestinationAvx_1_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandAndImmToDestinationAvx_1_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandAndImmToDestinationAvx_1_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandAndImmToDestinationAvx_2_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandAndImmToDestinationAvx_2_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandAndImmToDestinationAvx_2_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_0_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_0_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_0_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_100_0_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_100_0_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_100_0_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_101_0_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_101_0_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_101_0_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_102_0_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_102_0_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_102_0_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_103_0_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_103_0_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_103_0_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_104_0_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_104_0_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_104_0_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_105_0_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_105_0_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_105_0_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_106_0_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_106_0_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_106_0_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_107_0_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_107_0_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_107_0_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_10_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_10_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_10_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_11_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_11_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_11_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_124_0_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_124_0_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_124_0_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_125_0_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_125_0_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_125_0_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_126_0_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_126_0_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_126_0_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_127_0_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_127_0_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_127_0_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_128_0_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_128_0_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_128_0_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_129_0_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_129_0_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_129_0_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_12_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_12_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_12_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_130_2_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_130_2_2_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_130_2_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_131_2_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_131_2_2_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_131_2_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_132_2_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_132_2_2_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_132_2_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_133_2_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_133_2_2_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_133_2_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_134_0_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_134_0_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_134_0_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_135_0_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_135_0_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_135_0_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_136_0_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_136_0_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_136_0_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_137_0_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_137_0_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_137_0_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_138_0_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_138_0_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_138_0_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_139_0_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_139_0_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_139_0_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_13_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_13_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_13_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_140_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_140_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_140_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_141_2_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_141_2_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_141_2_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_142_2_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_142_2_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_142_2_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_143_2_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_143_2_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_143_2_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_144_2_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_144_2_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_144_2_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_145_2_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_145_2_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_145_2_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_146_2_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_146_2_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_146_2_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_147_2_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_147_2_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_147_2_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_148_2_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_148_2_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_148_2_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_149_2_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_149_2_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_149_2_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_14_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_14_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_14_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_150_2_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_150_2_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_150_2_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_151_2_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_151_2_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_151_2_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_152_2_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_152_2_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_152_2_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_153_2_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_153_2_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_153_2_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_154_2_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_154_2_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_154_2_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_155_2_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_155_2_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_155_2_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_156_2_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_156_2_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_156_2_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_157_2_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_157_2_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_157_2_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_158_2_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_158_2_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_158_2_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_159_2_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_159_2_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_159_2_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_15_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_15_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_15_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_160_2_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_160_2_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_160_2_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_161_2_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_161_2_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_161_2_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_16_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_16_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_16_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_17_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_17_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_17_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_182_2_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_182_2_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_182_2_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_183_2_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_183_2_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_183_2_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_184_2_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_184_2_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_184_2_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_18_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_18_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_18_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_19_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_19_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_19_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_1_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_1_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_1_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_20_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_20_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_20_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_21_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_21_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_21_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_22_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_22_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_22_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_23_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_23_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_23_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_24_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_24_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_24_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_25_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_25_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_25_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_26_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_26_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_26_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_27_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_27_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_27_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_2_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_2_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_2_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_36_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_36_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_36_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_37_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_37_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_37_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_38_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_38_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_38_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_39_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_39_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_39_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_3_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_3_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_3_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_40_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_40_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_40_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_41_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_41_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_41_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_42_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_42_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_42_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_43_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_43_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_43_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_44_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_44_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_44_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_45_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_45_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_45_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_46_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_46_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_46_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_47_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_47_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_47_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_48_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_48_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_48_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_49_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_49_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_49_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_4_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_4_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_4_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_50_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_50_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_50_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_51_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_51_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_51_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_52_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_52_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_52_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_53_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_53_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_53_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_54_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_54_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_54_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_55_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_55_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_55_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_56_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_56_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_56_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_57_0_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_57_0_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_57_0_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_58_0_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_58_0_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_58_0_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_59_0_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_59_0_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_59_0_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_5_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_5_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_5_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_60_0_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_60_0_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_60_0_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_61_0_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_61_0_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_61_0_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_62_0_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_62_0_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_62_0_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_63_0_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_63_0_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_63_0_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_64_0_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_64_0_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_64_0_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_65_0_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_65_0_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_65_0_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_66_0_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_66_0_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_66_0_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_67_0_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_67_0_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_67_0_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_68_0_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_68_0_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_68_0_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_69_0_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_69_0_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_69_0_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_6_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_6_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_6_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_70_0_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_70_0_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_70_0_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_71_0_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_71_0_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_71_0_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_72_0_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_72_0_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_72_0_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_73_0_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_73_0_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_73_0_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_7_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_7_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_7_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_8_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_8_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_8_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_90_0_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_90_0_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_90_0_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_91_0_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_91_0_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_91_0_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_92_0_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_92_0_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_92_0_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_93_0_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_93_0_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_93_0_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_94_0_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_94_0_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_94_0_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_95_0_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_95_0_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_95_0_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_96_0_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_96_0_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_96_0_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_97_0_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_97_0_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_97_0_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_98_0_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_98_0_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_98_0_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_99_0_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_99_0_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_99_0_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd2OperandToDestinationAvx_9_0_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd2OperandToDestinationAvx_9_0_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd2OperandToDestinationAvx_9_0_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd3OperandAndImmToDestinationAvx_3_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd3OperandAndImmToDestinationAvx_3_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd3OperandAndImmToDestinationAvx_3_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd3OperandAndImmToDestinationAvx_4_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd3OperandAndImmToDestinationAvx_4_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd3OperandAndImmToDestinationAvx_4_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd3OperandAndImmToDestinationAvx_5_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd3OperandAndImmToDestinationAvx_5_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd3OperandAndImmToDestinationAvx_5_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd3OperandAndImmToDestinationAvx_6_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd3OperandAndImmToDestinationAvx_6_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd3OperandAndImmToDestinationAvx_6_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd3OperandAndImmToDestinationAvx_7_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd3OperandAndImmToDestinationAvx_7_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd3OperandAndImmToDestinationAvx_7_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd3OperandToDestinationAvx_285_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd3OperandToDestinationAvx_285_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd3OperandToDestinationAvx_285_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd3OperandToDestinationAvx_286_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd3OperandToDestinationAvx_286_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd3OperandToDestinationAvx_286_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd3OperandToDestinationAvx_287_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd3OperandToDestinationAvx_287_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd3OperandToDestinationAvx_287_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd3OperandToDestinationAvx_288_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd3OperandToDestinationAvx_288_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd3OperandToDestinationAvx_288_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleParallelSimd3OperandToDestinationAvx_289_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleParallelSimd3OperandToDestinationAvx_289_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ParallelSimd3OperandToDestinationAvx_289_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleRDTSC(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleRDTSC( at RIP {:#x}\n", rip);
+ 
     return g_hook_RDTSC.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleRDTSCP(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleRDTSCP( at RIP {:#x}\n", rip);
+ 
     return g_hook_RDTSCP.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleRET(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleRET( at RIP {:#x}\n", rip);
+ 
     return g_hook_RET.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleROUNDPx_0_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleROUNDPx_0_2_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ROUNDPx_0_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleROUNDPx_0_3_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleROUNDPx_0_3_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ROUNDPx_0_3_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleROUNDPx_1_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleROUNDPx_1_2_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ROUNDPx_1_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleROUNDPx_1_3_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleROUNDPx_1_3_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ROUNDPx_1_3_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleROUNDSx_0_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleROUNDSx_0_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ROUNDSx_0_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleROUNDSx_0_1_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleROUNDSx_0_1_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ROUNDSx_0_1_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleROUNDSx_1_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleROUNDSx_1_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ROUNDSx_1_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleROUNDSx_1_1_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleROUNDSx_1_1_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ROUNDSx_1_1_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleRotateInstructionBMI2_112_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleRotateInstructionBMI2_112_( at RIP {:#x}\n", rip);
+ 
     return g_hook_RotateInstructionBMI2_112_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleRotateInstruction_112_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleRotateInstruction_112_( at RIP {:#x}\n", rip);
+ 
     return g_hook_RotateInstruction_112_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleRotateInstruction_113_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleRotateInstruction_113_( at RIP {:#x}\n", rip);
+ 
     return g_hook_RotateInstruction_113_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleRotateInstruction_114_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleRotateInstruction_114_( at RIP {:#x}\n", rip);
+ 
     return g_hook_RotateInstruction_114_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleRotateInstruction_115_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleRotateInstruction_115_( at RIP {:#x}\n", rip);
+ 
     return g_hook_RotateInstruction_115_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSAHF(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSAHF( at RIP {:#x}\n", rip);
+ 
     return g_hook_SAHF.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSHA1(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSHA1( at RIP {:#x}\n", rip);
+ 
     return g_hook_SHA1.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSTC(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSTC( at RIP {:#x}\n", rip);
+ 
     return g_hook_STC.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSTD(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSTD( at RIP {:#x}\n", rip);
+ 
     return g_hook_STD.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSTMXCSR(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSTMXCSR( at RIP {:#x}\n", rip);
+ 
     return g_hook_STMXCSR.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleScalarFMA3_0_10_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleScalarFMA3_0_10_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ScalarFMA3_0_10_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleScalarFMA3_0_13_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleScalarFMA3_0_13_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ScalarFMA3_0_13_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleScalarFMA3_0_14_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleScalarFMA3_0_14_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ScalarFMA3_0_14_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleScalarFMA3_0_17_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleScalarFMA3_0_17_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ScalarFMA3_0_17_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleScalarFMA3_0_18_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleScalarFMA3_0_18_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ScalarFMA3_0_18_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleScalarFMA3_0_5_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleScalarFMA3_0_5_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ScalarFMA3_0_5_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleScalarFMA3_0_6_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleScalarFMA3_0_6_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ScalarFMA3_0_6_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleScalarFMA3_0_9_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleScalarFMA3_0_9_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ScalarFMA3_0_9_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleScalarFMA3_1_10_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleScalarFMA3_1_10_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ScalarFMA3_1_10_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleScalarFMA3_1_13_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleScalarFMA3_1_13_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ScalarFMA3_1_13_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleScalarFMA3_1_14_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleScalarFMA3_1_14_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ScalarFMA3_1_14_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleScalarFMA3_1_17_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleScalarFMA3_1_17_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ScalarFMA3_1_17_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleScalarFMA3_1_18_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleScalarFMA3_1_18_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ScalarFMA3_1_18_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleScalarFMA3_1_5_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleScalarFMA3_1_5_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ScalarFMA3_1_5_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleScalarFMA3_1_6_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleScalarFMA3_1_6_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ScalarFMA3_1_6_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleScalarFMA3_1_9_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleScalarFMA3_1_9_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ScalarFMA3_1_9_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleScalarFMA3_2_10_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleScalarFMA3_2_10_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ScalarFMA3_2_10_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleScalarFMA3_2_13_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleScalarFMA3_2_13_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ScalarFMA3_2_13_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleScalarFMA3_2_14_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleScalarFMA3_2_14_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ScalarFMA3_2_14_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleScalarFMA3_2_17_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleScalarFMA3_2_17_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ScalarFMA3_2_17_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleScalarFMA3_2_18_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleScalarFMA3_2_18_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ScalarFMA3_2_18_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleScalarFMA3_2_5_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleScalarFMA3_2_5_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ScalarFMA3_2_5_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleScalarFMA3_2_6_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleScalarFMA3_2_6_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ScalarFMA3_2_6_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleScalarFMA3_2_9_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleScalarFMA3_2_9_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ScalarFMA3_2_9_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSetConditional_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSetConditional_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SetConditional_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSetConditional_10_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSetConditional_10_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SetConditional_10_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSetConditional_11_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSetConditional_11_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SetConditional_11_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSetConditional_12_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSetConditional_12_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SetConditional_12_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSetConditional_13_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSetConditional_13_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SetConditional_13_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSetConditional_14_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSetConditional_14_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SetConditional_14_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSetConditional_15_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSetConditional_15_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SetConditional_15_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSetConditional_1_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSetConditional_1_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SetConditional_1_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSetConditional_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSetConditional_2_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SetConditional_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSetConditional_3_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSetConditional_3_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SetConditional_3_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSetConditional_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSetConditional_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SetConditional_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSetConditional_5_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSetConditional_5_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SetConditional_5_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSetConditional_6_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSetConditional_6_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SetConditional_6_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSetConditional_7_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSetConditional_7_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SetConditional_7_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSetConditional_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSetConditional_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SetConditional_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSetConditional_9_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSetConditional_9_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SetConditional_9_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleShiftInstructionBMI2_109_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleShiftInstructionBMI2_109_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ShiftInstructionBMI2_109_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleShiftInstructionBMI2_110_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleShiftInstructionBMI2_110_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ShiftInstructionBMI2_110_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleShiftInstructionBMI2_111_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleShiftInstructionBMI2_111_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ShiftInstructionBMI2_111_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleShiftInstruction_109_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleShiftInstruction_109_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ShiftInstruction_109_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleShiftInstruction_110_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleShiftInstruction_110_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ShiftInstruction_110_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleShiftInstruction_111_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleShiftInstruction_111_( at RIP {:#x}\n", rip);
+ 
     return g_hook_ShiftInstruction_111_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd1OperandAndImmToDestination_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd1OperandAndImmToDestination_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd1OperandAndImmToDestination_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd1OperandAndImmToDestination_1_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd1OperandAndImmToDestination_1_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd1OperandAndImmToDestination_1_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd1OperandFromGpr32Source_10_13_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd1OperandFromGpr32Source_10_13_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd1OperandFromGpr32Source_10_13_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd1OperandFromGpr32Source_16_19_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd1OperandFromGpr32Source_16_19_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd1OperandFromGpr32Source_16_19_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd1OperandToDestinationAvx_24_2147483648_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd1OperandToDestinationAvx_24_2147483648_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd1OperandToDestinationAvx_24_2147483648_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd1OperandToDestinationAvx_25_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd1OperandToDestinationAvx_25_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd1OperandToDestinationAvx_25_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd1OperandToDestinationAvx_26_2147483648_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd1OperandToDestinationAvx_26_2147483648_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd1OperandToDestinationAvx_26_2147483648_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd1OperandToDestination_0_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd1OperandToDestination_0_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd1OperandToDestination_0_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd1OperandToDestination_1_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd1OperandToDestination_1_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd1OperandToDestination_1_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd1OperandToDestination_20_2147483648_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd1OperandToDestination_20_2147483648_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd1OperandToDestination_20_2147483648_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd1OperandToDestination_21_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd1OperandToDestination_21_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd1OperandToDestination_21_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd1OperandToDestination_22_2147483648_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd1OperandToDestination_22_2147483648_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd1OperandToDestination_22_2147483648_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd1OperandToDestination_23_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd1OperandToDestination_23_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd1OperandToDestination_23_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd1OperandToDestination_24_2147483648_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd1OperandToDestination_24_2147483648_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd1OperandToDestination_24_2147483648_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd1OperandToDestination_25_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd1OperandToDestination_25_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd1OperandToDestination_25_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd1OperandToDestination_26_2147483648_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd1OperandToDestination_26_2147483648_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd1OperandToDestination_26_2147483648_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd1OperandToDestination_27_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd1OperandToDestination_27_2_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd1OperandToDestination_27_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd1OperandToDestination_2_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd1OperandToDestination_2_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd1OperandToDestination_2_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd1OperandToDestination_31_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd1OperandToDestination_31_2_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd1OperandToDestination_31_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd1OperandToDestination_32_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd1OperandToDestination_32_2_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd1OperandToDestination_32_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd1OperandToDestination_33_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd1OperandToDestination_33_2_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd1OperandToDestination_33_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd1OperandToDestination_34_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd1OperandToDestination_34_2_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd1OperandToDestination_34_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd1OperandToDestination_35_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd1OperandToDestination_35_2_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd1OperandToDestination_35_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd1OperandToDestination_36_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd1OperandToDestination_36_2_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd1OperandToDestination_36_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd1OperandToDestination_37_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd1OperandToDestination_37_2_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd1OperandToDestination_37_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd1OperandToDestination_38_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd1OperandToDestination_38_2_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd1OperandToDestination_38_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd1OperandToDestination_39_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd1OperandToDestination_39_2_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd1OperandToDestination_39_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd1OperandToDestination_3_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd1OperandToDestination_3_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd1OperandToDestination_3_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd1OperandToDestination_40_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd1OperandToDestination_40_2_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd1OperandToDestination_40_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd1OperandToDestination_41_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd1OperandToDestination_41_2_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd1OperandToDestination_41_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd1OperandToDestination_42_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd1OperandToDestination_42_2_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd1OperandToDestination_42_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd1OperandToDestination_43_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd1OperandToDestination_43_2_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd1OperandToDestination_43_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd1OperandToDestination_4_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd1OperandToDestination_4_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd1OperandToDestination_4_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd1OperandToDestination_5_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd1OperandToDestination_5_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd1OperandToDestination_5_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd1OperandToDestination_6_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd1OperandToDestination_6_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd1OperandToDestination_6_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd1OperandToDestination_7_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd1OperandToDestination_7_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd1OperandToDestination_7_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd1OperandToGpr32Destination_14_17_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd1OperandToGpr32Destination_14_17_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd1OperandToGpr32Destination_14_17_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd1OperandToGpr32Destination_15_18_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd1OperandToGpr32Destination_15_18_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd1OperandToGpr32Destination_15_18_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd1OperandToGpr32Destination_8_11_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd1OperandToGpr32Destination_8_11_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd1OperandToGpr32Destination_8_11_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd1OperandToGpr32Destination_9_12_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd1OperandToGpr32Destination_9_12_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd1OperandToGpr32Destination_9_12_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandAndImmToDestination_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandAndImmToDestination_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandAndImmToDestination_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandAndImmToDestination_1_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandAndImmToDestination_1_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandAndImmToDestination_1_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandAndImmToDestination_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandAndImmToDestination_2_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandAndImmToDestination_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandAndImmToDestination_3_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandAndImmToDestination_3_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandAndImmToDestination_3_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandAndImmToDestination_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandAndImmToDestination_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandAndImmToDestination_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandAndImmToDestination_6_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandAndImmToDestination_6_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandAndImmToDestination_6_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandAndImmToDestination_7_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandAndImmToDestination_7_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandAndImmToDestination_7_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandFromGpr32SourceAvx_10_13_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandFromGpr32SourceAvx_10_13_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandFromGpr32SourceAvx_10_13_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandFromGpr32SourceAvx_16_19_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandFromGpr32SourceAvx_16_19_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandFromGpr32SourceAvx_16_19_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_0_0_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_0_0_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_0_0_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_10_10_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_10_10_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_10_10_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_11_11_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_11_11_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_11_11_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_12_12_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_12_12_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_12_12_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_13_13_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_13_13_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_13_13_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_141_56_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_141_56_2_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_141_56_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_142_57_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_142_57_2_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_142_57_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_143_58_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_143_58_2_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_143_58_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_144_59_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_144_59_2_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_144_59_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_145_60_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_145_60_2_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_145_60_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_146_61_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_146_61_2_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_146_61_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_147_62_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_147_62_2_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_147_62_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_148_63_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_148_63_2_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_148_63_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_149_64_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_149_64_2_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_149_64_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_14_14_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_14_14_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_14_14_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_150_65_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_150_65_2_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_150_65_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_151_66_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_151_66_2_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_151_66_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_15_15_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_15_15_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_15_15_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_16_16_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_16_16_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_16_16_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_17_17_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_17_17_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_17_17_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_18_18_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_18_18_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_18_18_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_19_19_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_19_19_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_19_19_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_1_1_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_1_1_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_1_1_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_20_20_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_20_20_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_20_20_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_21_21_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_21_21_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_21_21_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_22_22_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_22_22_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_22_22_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_23_23_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_23_23_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_23_23_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_24_24_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_24_24_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_24_24_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_25_25_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_25_25_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_25_25_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_26_26_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_26_26_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_26_26_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_27_27_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_27_27_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_27_27_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_2_2_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_2_2_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_2_2_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_36_36_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_36_36_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_36_36_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_37_37_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_37_37_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_37_37_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_38_38_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_38_38_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_38_38_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_39_39_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_39_39_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_39_39_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_3_3_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_3_3_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_3_3_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_40_40_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_40_40_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_40_40_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_41_41_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_41_41_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_41_41_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_42_42_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_42_42_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_42_42_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_43_43_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_43_43_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_43_43_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_44_44_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_44_44_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_44_44_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_45_45_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_45_45_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_45_45_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_46_46_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_46_46_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_46_46_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_47_47_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_47_47_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_47_47_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_48_48_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_48_48_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_48_48_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_49_49_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_49_49_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_49_49_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_4_4_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_4_4_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_4_4_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_50_50_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_50_50_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_50_50_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_51_51_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_51_51_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_51_51_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_52_52_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_52_52_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_52_52_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_53_53_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_53_53_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_53_53_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_54_54_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_54_54_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_54_54_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_5_5_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_5_5_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_5_5_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_6_6_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_6_6_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_6_6_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_7_7_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_7_7_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_7_7_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_8_8_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_8_8_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_8_8_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestinationSSEOrMmx_9_9_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestinationSSEOrMmx_9_9_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestinationSSEOrMmx_9_9_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_100_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_100_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_100_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_101_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_101_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_101_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_102_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_102_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_102_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_103_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_103_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_103_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_104_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_104_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_104_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_105_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_105_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_105_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_106_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_106_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_106_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_107_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_107_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_107_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_124_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_124_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_124_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_125_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_125_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_125_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_126_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_126_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_126_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_127_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_127_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_127_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_128_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_128_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_128_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_129_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_129_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_129_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_130_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_130_2_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_130_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_131_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_131_2_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_131_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_132_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_132_2_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_132_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_133_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_133_2_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_133_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_134_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_134_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_134_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_135_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_135_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_135_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_136_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_136_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_136_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_137_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_137_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_137_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_138_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_138_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_138_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_139_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_139_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_139_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_152_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_152_2_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_152_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_153_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_153_2_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_153_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_154_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_154_2_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_154_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_155_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_155_2_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_155_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_156_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_156_2_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_156_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_157_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_157_2_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_157_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_158_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_158_2_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_158_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_159_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_159_2_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_159_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_160_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_160_2_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_160_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_161_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_161_2_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_161_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_182_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_182_2_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_182_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_183_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_183_2_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_183_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_184_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_184_2_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_184_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_298_65536_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_298_65536_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_298_65536_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_299_65536_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_299_65536_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_299_65536_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_300_65536_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_300_65536_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_300_65536_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_301_65536_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_301_65536_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_301_65536_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_302_65536_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_302_65536_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_302_65536_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_55_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_55_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_55_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_56_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_56_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_56_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_57_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_57_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_57_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_58_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_58_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_58_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_59_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_59_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_59_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_60_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_60_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_60_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_61_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_61_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_61_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_62_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_62_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_62_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_63_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_63_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_63_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_64_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_64_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_64_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_65_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_65_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_65_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_66_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_66_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_66_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_67_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_67_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_67_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_68_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_68_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_68_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_69_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_69_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_69_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_70_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_70_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_70_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_71_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_71_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_71_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_72_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_72_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_72_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_73_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_73_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_73_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_90_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_90_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_90_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_91_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_91_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_91_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_92_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_92_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_92_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_93_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_93_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_93_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_94_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_94_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_94_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_95_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_95_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_95_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_96_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_96_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_96_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_97_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_97_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_97_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_98_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_98_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_98_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd2OperandToDestination_99_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd2OperandToDestination_99_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd2OperandToDestination_99_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd3OperandImplicitXMM0_0_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd3OperandImplicitXMM0_0_2_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd3OperandImplicitXMM0_0_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd3OperandImplicitXMM0_1_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd3OperandImplicitXMM0_1_2_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd3OperandImplicitXMM0_1_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd3OperandImplicitXMM0_23_65536_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd3OperandImplicitXMM0_23_65536_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd3OperandImplicitXMM0_23_65536_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimd3OperandImplicitXMM0_2_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimd3OperandImplicitXMM0_2_2_( at RIP {:#x}\n", rip);
+ 
     return g_hook_Simd3OperandImplicitXMM0_2_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdFloatCompare_108_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdFloatCompare_108_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdFloatCompare_108_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdFloatCompare_109_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdFloatCompare_109_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdFloatCompare_109_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdFloatCompare_110_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdFloatCompare_110_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdFloatCompare_110_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdFloatCompare_111_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdFloatCompare_111_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdFloatCompare_111_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdFloatCompare_112_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdFloatCompare_112_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdFloatCompare_112_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdFloatCompare_113_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdFloatCompare_113_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdFloatCompare_113_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdFloatCompare_114_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdFloatCompare_114_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdFloatCompare_114_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdFloatCompare_115_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdFloatCompare_115_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdFloatCompare_115_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdFloatCompare_116_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdFloatCompare_116_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdFloatCompare_116_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdFloatCompare_117_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdFloatCompare_117_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdFloatCompare_117_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdFloatCompare_118_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdFloatCompare_118_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdFloatCompare_118_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdFloatCompare_119_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdFloatCompare_119_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdFloatCompare_119_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdFloatCompare_120_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdFloatCompare_120_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdFloatCompare_120_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdFloatCompare_121_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdFloatCompare_121_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdFloatCompare_121_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdFloatCompare_122_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdFloatCompare_122_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdFloatCompare_122_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdFloatCompare_123_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdFloatCompare_123_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdFloatCompare_123_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdFloatCompare_74_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdFloatCompare_74_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdFloatCompare_74_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdFloatCompare_75_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdFloatCompare_75_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdFloatCompare_75_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdFloatCompare_76_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdFloatCompare_76_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdFloatCompare_76_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdFloatCompare_77_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdFloatCompare_77_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdFloatCompare_77_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdFloatCompare_78_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdFloatCompare_78_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdFloatCompare_78_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdFloatCompare_79_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdFloatCompare_79_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdFloatCompare_79_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdFloatCompare_80_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdFloatCompare_80_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdFloatCompare_80_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdFloatCompare_81_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdFloatCompare_81_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdFloatCompare_81_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdFloatCompare_82_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdFloatCompare_82_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdFloatCompare_82_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdFloatCompare_83_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdFloatCompare_83_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdFloatCompare_83_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdFloatCompare_84_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdFloatCompare_84_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdFloatCompare_84_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdFloatCompare_85_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdFloatCompare_85_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdFloatCompare_85_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdFloatCompare_86_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdFloatCompare_86_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdFloatCompare_86_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdFloatCompare_87_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdFloatCompare_87_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdFloatCompare_87_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdFloatCompare_88_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdFloatCompare_88_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdFloatCompare_88_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdFloatCompare_89_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdFloatCompare_89_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdFloatCompare_89_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_108_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_108_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_108_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_109_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_109_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_109_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_110_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_110_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_110_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_111_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_111_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_111_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_112_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_112_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_112_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_113_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_113_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_113_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_114_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_114_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_114_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_115_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_115_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_115_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_116_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_116_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_116_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_117_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_117_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_117_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_118_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_118_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_118_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_119_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_119_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_119_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_120_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_120_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_120_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_121_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_121_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_121_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_122_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_122_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_122_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_123_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_123_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_123_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_187_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_187_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_187_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_188_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_188_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_188_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_189_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_189_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_189_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_190_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_190_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_190_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_191_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_191_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_191_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_192_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_192_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_192_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_193_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_193_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_193_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_194_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_194_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_194_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_195_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_195_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_195_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_196_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_196_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_196_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_197_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_197_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_197_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_198_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_198_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_198_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_199_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_199_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_199_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_200_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_200_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_200_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_201_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_201_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_201_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_202_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_202_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_202_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_203_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_203_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_203_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_204_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_204_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_204_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_205_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_205_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_205_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_206_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_206_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_206_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_207_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_207_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_207_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_208_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_208_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_208_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_209_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_209_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_209_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_210_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_210_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_210_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_211_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_211_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_211_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_212_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_212_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_212_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_213_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_213_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_213_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_214_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_214_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_214_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_215_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_215_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_215_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_216_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_216_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_216_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_217_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_217_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_217_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_218_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_218_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_218_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_219_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_219_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_219_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_220_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_220_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_220_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_221_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_221_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_221_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_222_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_222_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_222_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_223_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_223_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_223_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_224_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_224_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_224_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_225_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_225_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_225_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_226_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_226_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_226_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_227_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_227_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_227_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_228_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_228_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_228_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_229_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_229_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_229_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_230_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_230_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_230_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_231_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_231_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_231_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_232_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_232_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_232_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_233_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_233_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_233_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_234_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_234_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_234_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_235_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_235_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_235_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_236_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_236_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_236_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_237_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_237_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_237_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_238_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_238_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_238_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_239_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_239_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_239_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_240_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_240_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_240_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_241_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_241_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_241_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_242_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_242_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_242_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_243_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_243_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_243_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_244_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_244_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_244_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_245_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_245_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_245_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_246_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_246_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_246_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_247_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_247_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_247_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_248_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_248_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_248_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_249_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_249_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_249_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_250_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_250_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_250_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_251_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_251_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_251_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_252_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_252_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_252_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_253_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_253_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_253_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_254_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_254_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_254_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_255_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_255_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_255_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_256_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_256_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_256_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_257_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_257_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_257_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_258_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_258_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_258_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_259_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_259_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_259_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_260_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_260_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_260_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_261_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_261_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_261_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_262_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_262_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_262_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_263_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_263_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_263_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_264_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_264_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_264_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_265_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_265_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_265_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_266_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_266_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_266_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_267_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_267_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_267_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_268_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_268_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_268_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_269_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_269_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_269_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_270_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_270_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_270_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_271_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_271_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_271_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_272_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_272_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_272_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_273_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_273_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_273_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_274_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_274_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_274_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_275_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_275_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_275_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_276_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_276_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_276_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_277_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_277_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_277_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_278_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_278_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_278_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_279_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_279_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_279_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_280_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_280_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_280_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_281_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_281_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_281_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_282_4_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_282_4_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_282_4_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_74_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_74_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_74_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_75_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_75_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_75_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_76_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_76_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_76_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_77_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_77_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_77_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_78_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_78_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_78_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_79_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_79_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_79_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_80_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_80_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_80_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_81_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_81_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_81_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_82_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_82_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_82_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_83_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_83_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_83_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_84_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_84_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_84_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_85_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_85_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_85_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_86_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_86_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_86_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_87_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_87_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_87_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_88_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_88_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_88_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleSimdParallelFloatCompareAvx_89_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleSimdParallelFloatCompareAvx_89_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_SimdParallelFloatCompareAvx_89_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleStringInstruction(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleStringInstruction( at RIP {:#x}\n", rip);
+ 
     return g_hook_StringInstruction.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleTEST(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleTEST( at RIP {:#x}\n", rip);
+ 
     return g_hook_TEST.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleTrap(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleTrap( at RIP {:#x}\n", rip);
+ 
     return g_hook_Trap.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleTwoOperandArithmeticInstruction_84_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleTwoOperandArithmeticInstruction_84_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_TwoOperandArithmeticInstruction_84_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleTwoOperandArithmeticInstruction_84_24_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleTwoOperandArithmeticInstruction_84_24_( at RIP {:#x}\n", rip);
+ 
     return g_hook_TwoOperandArithmeticInstruction_84_24_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleTwoOperandArithmeticInstruction_93_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleTwoOperandArithmeticInstruction_93_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_TwoOperandArithmeticInstruction_93_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleTwoOperandArithmeticInstruction_93_24_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleTwoOperandArithmeticInstruction_93_24_( at RIP {:#x}\n", rip);
+ 
     return g_hook_TwoOperandArithmeticInstruction_93_24_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleTwoOperandLogicInstruction_104_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleTwoOperandLogicInstruction_104_( at RIP {:#x}\n", rip);
+ 
     return g_hook_TwoOperandLogicInstruction_104_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleTwoOperandLogicInstruction_106_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleTwoOperandLogicInstruction_106_( at RIP {:#x}\n", rip);
+ 
     return g_hook_TwoOperandLogicInstruction_106_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleTwoOperandLogicInstruction_108_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleTwoOperandLogicInstruction_108_( at RIP {:#x}\n", rip);
+ 
     return g_hook_TwoOperandLogicInstruction_108_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleVBROADCASTx128(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleVBROADCASTx128( at RIP {:#x}\n", rip);
+ 
     return g_hook_VBROADCASTx128.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleVBROADCASTxx_61_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleVBROADCASTxx_61_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_VBROADCASTxx_61_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleVBROADCASTxx_61_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleVBROADCASTxx_61_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_VBROADCASTxx_61_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleVBROADCASTxx_63_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleVBROADCASTxx_63_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_VBROADCASTxx_63_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleVBROADCASTxx_63_8_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleVBROADCASTxx_63_8_( at RIP {:#x}\n", rip);
+ 
     return g_hook_VBROADCASTxx_63_8_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleVBROADCASTxx_65_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleVBROADCASTxx_65_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_VBROADCASTxx_65_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleVBROADCASTxx_67_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleVBROADCASTxx_67_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_VBROADCASTxx_67_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleVCVTPS2PH(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleVCVTPS2PH( at RIP {:#x}\n", rip);
+ 
     return g_hook_VCVTPS2PH.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleVEXTRACTx128(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleVEXTRACTx128( at RIP {:#x}\n", rip);
+ 
     return g_hook_VEXTRACTx128.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleVGATHER_32_32_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleVGATHER_32_32_( at RIP {:#x}\n", rip);
+ 
     return g_hook_VGATHER_32_32_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleVGATHER_32_64_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleVGATHER_32_64_( at RIP {:#x}\n", rip);
+ 
     return g_hook_VGATHER_32_64_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleVGATHER_64_32_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleVGATHER_64_32_( at RIP {:#x}\n", rip);
+ 
     return g_hook_VGATHER_64_32_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleVGATHER_64_64_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleVGATHER_64_64_( at RIP {:#x}\n", rip);
+ 
     return g_hook_VGATHER_64_64_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleVINSERTx128(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleVINSERTx128( at RIP {:#x}\n", rip);
+ 
     return g_hook_VINSERTx128.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleVMOVDQA(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleVMOVDQA( at RIP {:#x}\n", rip);
+ 
     return g_hook_VMOVDQA.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleVMOVDQA32(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleVMOVDQA32( at RIP {:#x}\n", rip);
+ 
     return g_hook_VMOVDQA32.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleVMOVDQA64(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleVMOVDQA64( at RIP {:#x}\n", rip);
+ 
     return g_hook_VMOVDQA64.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleVMOVDQU(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleVMOVDQU( at RIP {:#x}\n", rip);
+ 
     return g_hook_VMOVDQU.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleVMOVDQU16(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleVMOVDQU16( at RIP {:#x}\n", rip);
+ 
     return g_hook_VMOVDQU16.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleVMOVDQU32(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleVMOVDQU32( at RIP {:#x}\n", rip);
+ 
     return g_hook_VMOVDQU32.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleVMOVDQU64(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleVMOVDQU64( at RIP {:#x}\n", rip);
+ 
     return g_hook_VMOVDQU64.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleVMOVDQU8(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleVMOVDQU8( at RIP {:#x}\n", rip);
+ 
     return g_hook_VMOVDQU8.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleVMOVD_VMOVQ(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleVMOVD_VMOVQ( at RIP {:#x}\n", rip);
+ 
     return g_hook_VMOVD_VMOVQ.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleVMOVNTDQA(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleVMOVNTDQA( at RIP {:#x}\n", rip);
+ 
     return g_hook_VMOVNTDQA.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleVMOV_Predicated(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleVMOV_Predicated( at RIP {:#x}\n", rip);
+ 
     return g_hook_VMOV_Predicated.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleVMOV_Unpredicated(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleVMOV_Unpredicated( at RIP {:#x}\n", rip);
+ 
     return g_hook_VMOV_Unpredicated.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleVPERM2x128(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleVPERM2x128( at RIP {:#x}\n", rip);
+ 
     return g_hook_VPERM2x128.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleVPERMILPx_3_283_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleVPERMILPx_3_283_( at RIP {:#x}\n", rip);
+ 
     return g_hook_VPERMILPx_3_283_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleVPERMILPx_4_284_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleVPERMILPx_4_284_( at RIP {:#x}\n", rip);
+ 
     return g_hook_VPERMILPx_4_284_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleVPERMPD(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleVPERMPD( at RIP {:#x}\n", rip);
+ 
     return g_hook_VPERMPD.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleVPERMPS_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleVPERMPS_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_VPERMPS_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleVPERMPS_1_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleVPERMPS_1_( at RIP {:#x}\n", rip);
+ 
     return g_hook_VPERMPS_1_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleVPHMINPOSUW(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleVPHMINPOSUW( at RIP {:#x}\n", rip);
+ 
     return g_hook_VPHMINPOSUW.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleVPSLL_SRA_SRL_28_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleVPSLL_SRA_SRL_28_( at RIP {:#x}\n", rip);
+ 
     return g_hook_VPSLL_SRA_SRL_28_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleVPSLL_SRA_SRL_29_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleVPSLL_SRA_SRL_29_( at RIP {:#x}\n", rip);
+ 
     return g_hook_VPSLL_SRA_SRL_29_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleVPSLL_SRA_SRL_30_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleVPSLL_SRA_SRL_30_( at RIP {:#x}\n", rip);
+ 
     return g_hook_VPSLL_SRA_SRL_30_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleVPSLL_SRA_SRL_31_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleVPSLL_SRA_SRL_31_( at RIP {:#x}\n", rip);
+ 
     return g_hook_VPSLL_SRA_SRL_31_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleVPSLL_SRA_SRL_32_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleVPSLL_SRA_SRL_32_( at RIP {:#x}\n", rip);
+ 
     return g_hook_VPSLL_SRA_SRL_32_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleVPSLL_SRA_SRL_33_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleVPSLL_SRA_SRL_33_( at RIP {:#x}\n", rip);
+ 
     return g_hook_VPSLL_SRA_SRL_33_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleVPSLL_SRA_SRL_34_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleVPSLL_SRA_SRL_34_( at RIP {:#x}\n", rip);
+ 
     return g_hook_VPSLL_SRA_SRL_34_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleVPSLL_SRA_SRL_35_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleVPSLL_SRA_SRL_35_( at RIP {:#x}\n", rip);
+ 
     return g_hook_VPSLL_SRA_SRL_35_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleVZEROALL(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleVZEROALL( at RIP {:#x}\n", rip);
+ 
     return g_hook_VZEROALL.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleVZEROUPPER(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleVZEROUPPER( at RIP {:#x}\n", rip);
+ 
     return g_hook_VZEROUPPER.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleVectorMaskMove_32_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleVectorMaskMove_32_( at RIP {:#x}\n", rip);
+ 
     return g_hook_VectorMaskMove_32_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleVectorMaskMove_64_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleVectorMaskMove_64_( at RIP {:#x}\n", rip);
+ 
     return g_hook_VectorMaskMove_64_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleXADD(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleXADD( at RIP {:#x}\n", rip);
+ 
     return g_hook_XADD.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleXCHG(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleXCHG( at RIP {:#x}\n", rip);
-    auto ti = TTD::ThreadInfo::get();
+ 
+    /*auto ti = TTD::ThreadInfo::get();
 
     if (ti != nullptr) {
         auto rip = ti->get_register_value<uint64_t>(TTD::Rip);
@@ -3579,34 +3362,34 @@ uint64_t HandleXCHG(uintptr_t decoder, TTD::DecodedInstruction* instr) {
             std::cout << std::format("XCHG instruction is XCHG eax, r8d, DECODER: {:X}, instr: {:X}\n", decoder, (uintptr_t)instr);
             MessageBoxA(NULL, "XCHG instruction is XCHG eax, r8d", "Info", MB_OK);
         }
-    }
+    }*/
 
     auto result = g_hook_XCHG.unsafe_call<uint64_t>(decoder, instr);
 
     return result;
 }
 uint64_t HandleXGETBV(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleXGETBV( at RIP {:#x}\n", rip);
+ 
     return g_hook_XGETBV.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleXLAT(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleXLAT( at RIP {:#x}\n", rip);
+ 
     return g_hook_XLAT.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleXRSTOR(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleXRSTOR( at RIP {:#x}\n", rip);
+ 
     return g_hook_XRSTOR.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleXSAVE_0_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleXSAVE_0_( at RIP {:#x}\n", rip);
+ 
     return g_hook_XSAVE_0_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleXSAVE_1_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleXSAVE_1_( at RIP {:#x}\n", rip);
+ 
     return g_hook_XSAVE_1_.unsafe_call<uint64_t>(decoder, instr);
 }
 uint64_t HandleXSAVE_2_(uintptr_t decoder, TTD::DecodedInstruction* instr) {
- auto rip = TTD::ThreadInfo::get()->get_register_value<uint64_t>(TTD::Rip); std::cout << fmt::format("Handling uint64_t HandleXSAVE_2_( at RIP {:#x}\n", rip);
+ 
     return g_hook_XSAVE_2_.unsafe_call<uint64_t>(decoder, instr);
 }
 
