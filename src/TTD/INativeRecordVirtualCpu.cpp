@@ -4,6 +4,7 @@
 namespace TTD {
     X64EmulatorRegisters* (*get_registers_fn)(INativeRecordVirtualCpu*) = nullptr;
     void (*virtualize_state_fn)(X64EmulatorRegisters*, uint8_t) = nullptr;
+    bool (*update_cache_fn)(void*, uint64_t, uintptr_t, size_t) = nullptr;
 
     X64EmulatorRegisters* INativeRecordVirtualCpu::get_registers() {
         if (get_registers_fn == nullptr) {
@@ -19,5 +20,15 @@ namespace TTD {
         }
 
         return virtualize_state_fn(this, flags);
+    }
+
+    bool INativeRecordVirtualCpu::update_cache(uint64_t addr, uintptr_t dst, size_t size) {
+        if (update_cache_fn == nullptr) {
+            update_cache_fn = (decltype(update_cache_fn))ttd::g_state->partial_symbol_lookup("TTD::VirtualCpuRecord::UpdateCachedDataInternal").value_or(0);
+        }
+
+        auto record = (void*)((uintptr_t)this + 0x100);
+
+        return update_cache_fn(record, addr, dst, size);
     }
 }

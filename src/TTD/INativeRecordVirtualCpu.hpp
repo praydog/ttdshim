@@ -393,5 +393,6 @@ public:
 
 public:
     X64EmulatorRegisters* get_registers();
+    bool update_cache(uint64_t addr, uintptr_t dst, size_t size);
 };
 }

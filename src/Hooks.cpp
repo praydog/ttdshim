@@ -412,6 +412,11 @@ void* trace_lookup_hook(TTD::ttd_vcpu_arch_t* arch, uint64_t unk) {
     auto& regs = arch->regs.regs;
     auto& rip = regs.rip;
     auto thread_id = GetCurrentThreadId();
+
+    auto ti = TTD::ThreadInfo::get();
+    if (ti == nullptr) {
+        return g_state->trace_lookup_hook.unsafe_call<void*>(arch, unk);
+    }
     
     while (!thread_data_mutex.try_lock()) {
         Sleep(0);
@@ -464,6 +469,8 @@ void* trace_lookup_hook(TTD::ttd_vcpu_arch_t* arch, uint64_t unk) {
         }
         VirtualProtect((void*)rip, thread_data.original_data.size(), PAGE_EXECUTE_READWRITE, &thread_data.old_protect_value);
         memcpy((void*)rip, redirected_opcodes, thread_data.original_data.size());
+
+        //ti->pv_ensure_thread_state()->update_cache(ip,)
     } else if (*(uint8_t*)rip == 0x49 && *(uint8_t*)(rip + 1) == 0x90) {
         thread_data.original_data.clear();
         thread_data.original_data.resize(sizeof(redirected_opcodes_4990));
