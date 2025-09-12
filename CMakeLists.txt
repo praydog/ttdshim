@@ -144,3 +144,19 @@ set_target_properties(ttdshim PROPERTIES
 	SUFFIX
 		.dll
 )
+
+# Target: exploit
+set(exploit_SOURCES
+	cmake.toml
+	"exploit/Main.cpp"
+)
+
+add_executable(exploit)
+
+target_sources(exploit PRIVATE ${exploit_SOURCES})
+source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR} FILES ${exploit_SOURCES})
+
+get_directory_property(CMKR_VS_STARTUP_PROJECT DIRECTORY ${PROJECT_SOURCE_DIR} DEFINITION VS_STARTUP_PROJECT)
+if(NOT CMKR_VS_STARTUP_PROJECT)
+	set_property(DIRECTORY ${PROJECT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT exploit)
+endif()

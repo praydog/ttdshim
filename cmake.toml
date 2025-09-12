@@ -53,3 +53,7 @@ compile-options = ["/W3"]
 OUTPUT_NAME = "ttdshim"
 PREFIX = ""
 SUFFIX = ".dll"
+
+[target.exploit]
+type = "executable"
+sources = ["exploit/**.cpp", "exploit/**.hpp"]
