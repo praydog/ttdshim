@@ -405,7 +405,13 @@ struct ThreadData {
 
 std::recursive_mutex thread_data_mutex;
 std::unordered_map<uint32_t, std::unique_ptr<ThreadData>> thread_data_map{};
+std::unordered_set<uint8_t> opcodes_16bit {
+    0x41, 0x43, 0x45, 0x47
+};
 
+std::unordered_set<uint8_t> opcodes_64bit {
+    0x49, 0x4B, 0x4D, 0x4F
+};
 
 void* trace_lookup_hook(TTD::ttd_vcpu_arch_t* arch, uint64_t unk) {
     //std::cout << fmt::format("In trace_lookup_hook! ARCH: {:X}, UNK: {:X}\n", (uintptr_t)arch, unk);
@@ -453,8 +459,15 @@ void* trace_lookup_hook(TTD::ttd_vcpu_arch_t* arch, uint64_t unk) {
         //rip = (uintptr_t)last_redirection_start_point + (current_opcode_index * 4);
     }
 
+    auto rip1 = *(uint8_t*)rip;
+
     // here
-    if (*(uint8_t*)rip == 0x41 && *(uint8_t*)(rip + 1) == 0x90) {
+    if (opcodes_16bit.contains(rip1) && *(uint8_t*)(rip + 1) == 0x90) {
+        //std::cout << fmt::format("[trace_lookup_hook] Found xchg eax, r8d! RIP: {:X}, REDIRECTING...\n", rip);
+        //std::cout << fmt::format("In trace_lookup_hook! ARCH: {:X}, UNK: {:X}\n", (uintptr_t)arch, unk);
+        //std::getchar();
+        //MessageBoxA(NULL, "Found xchg eax, r8d in trace_lookup_hook", "Info", MB_OK);
+
         thread_data.original_data.clear();
         thread_data.original_data.resize(sizeof(redirected_opcodes));
         //memset(thread_data.original_data.data(), 0, thread_data.original_data.size());
@@ -471,7 +484,7 @@ void* trace_lookup_hook(TTD::ttd_vcpu_arch_t* arch, uint64_t unk) {
         memcpy((void*)rip, redirected_opcodes, thread_data.original_data.size());
 
         //ti->pv_ensure_thread_state()->update_cache(ip,)
-    } else if (*(uint8_t*)rip == 0x49 && *(uint8_t*)(rip + 1) == 0x90) {
+    } else if (opcodes_64bit.contains(rip1) && *(uint8_t*)(rip + 1) == 0x90) {
         thread_data.original_data.clear();
         thread_data.original_data.resize(sizeof(redirected_opcodes_4990));
         //memset(thread_data.original_data.data(), 0, thread_data.original_data.size());
