@@ -1,6 +1,47 @@
-# TTD Shim DLL
+# ttdshim
 
-A Windows shim DLL that exports the complete TTD (Time Travel Debugging) API including:
+A proxy ("shim") DLL for Microsoft's Time Travel Debugging recorder,
+`TTDRecordCPU.dll`. It is deployed in place of the original (which is renamed to
+`TTDRecordCPU_orig.dll`), re-exports the recorder's API, and forwards every
+exported function to the original — so to the rest of TTD it looks and behaves
+like the genuine recorder.
+
+On top of that pass-through it hooks into TTD's internals to change how recording
+behaves. The main goal is to fix recording-fidelity bugs in TTD's instruction
+emulator: certain instruction encodings are emulated incorrectly, so the
+recorded trace diverges from what the CPU actually executed. The bundled
+`exploit` target is a minimal proof-of-concept of one such divergence.
+
+## What it does
+
+- **DLL proxying / load order.** Loads `TTDRecordCPU_orig.dll`, unlinks the shim
+  from the PEB loader list, and rewrites the original module's PEB entry back to
+  `TTDRecordCPU.dll` so name-based lookups keep working. Every export in
+  `ttdshim.def` is a thin forwarder resolved via `GetProcAddress` on the
+  original (see `src/Main.cpp`).
+- **Symbol-driven hooking.** Resolves TTD's internal (non-exported) functions
+  from the module's PDB via the DIA SDK (kananlib), then installs inline/mid
+  hooks with safetyhook. Internal TTD types (`ThreadInfo`, `SmartContext`,
+  `X64EmulatorRegisters`, `Writer::Thread`, `INativeRecordVirtualCpu`,
+  `NtRuntime`, the x86 decoder / SCode structures) are reconstructed from
+  reverse engineering so the shim can call into and inspect live recorder state.
+- **Emulation-fidelity fix (the main point).** Hooks the x64 emulator's
+  `TraceLookup` and watches for the encodings TTD mis-emulates —
+  `xchg eax, r8d` (`41 90`) and `xchg rax, r8` (`49 90`). When seen, it rewrites
+  them in place to equivalent instruction sequences the emulator handles
+  correctly, then restores the original bytes, so the trace matches real
+  execution.
+- **Anti-anti-debugging.** Neutralizes common evasions so a target can still be
+  recorded: `NtSetInformationThread(ThreadHideFromDebugger)` is swallowed,
+  `NtSetInformationProcess` requests that install a NULL
+  `ProcessInstrumentationCallback` are blocked, and emulated syscalls are
+  filtered via a hook on TTD's `BeforeSyscall`. (An `int 3` /
+  `RtlDispatchException` skip path also exists but is currently disabled.)
+
+> Status: this is an active reverse-engineering / research project, not a
+> finished tool. Much of the per-instruction instrumentation
+> (`src/InstructionInstrumentation.*`) is generated scaffolding, and several
+> hook paths are commented out or experimental.
 
 ## Exported Functions
 
@@ -94,25 +135,9 @@ The resulting DLL will be located at `build\Release\ttdshim.dll`.
 
 ## Usage
 
-The DLL currently implements stub versions of the exported functions that return `S_OK`. You can modify the implementations in `Main.cpp` to add your specific shim logic, such as:
-
-- Forwarding calls to another DLL
-- Implementing custom behavior
-- Adding logging or debugging functionality
-- Providing compatibility layers
-
-## Function Signatures
-
-```cpp
-HRESULT CreateReplayEngineWithHandshake(
-    void* param1,
-    void* param2,
-    void** ppResult
-);
-
-HRESULT CreateTraceLIstWithHandshake(
-    void* param1,
-    void* param2,
-    void** ppResult
-);
-```
+Deploy by renaming Microsoft's original recorder to `TTDRecordCPU_orig.dll` and
+dropping this DLL in beside it as `TTDRecordCPU.dll`. On the first forwarded
+call the shim loads the original, repairs the PEB, resolves symbols, and installs
+its hooks; from then on every export is forwarded to the original recorder while
+the instrumentation in `src/Hooks.cpp` runs underneath. Behaviour is changed by
+editing those hooks, not the forwarders in `src/Main.cpp`.
