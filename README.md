@@ -43,64 +43,6 @@ recorded trace diverges from what the CPU actually executed. The bundled
 > (`src/InstructionInstrumentation.*`) is generated scaffolding, and several
 > hook paths are commented out or experimental.
 
-## Exported Functions
-
-### Core TTD Functions
-- `ClearClientTlsValueForThreadId`
-- `FlushCodeCaches`
-- `GetCounters`
-- `GetClientTlsValueForCurrentThread`
-- `GetInstructionCounts`
-- `GetIpxRegisterMapDefinition`
-
-### Initialization Functions
-- `InitializeEmulationDx`
-- `InitializeGlobalState`
-- `InitializeGpxEngine`
-- `InitializeRecorder`
-- `InitializeSmartDbgClient`
-
-### Thread Management
-- `InjectThread`
-- `IsEmulatingCurrentThread`
-- `IsSimulator`
-- `SetThreadActive`
-- `StartSimulatingCurrentThread`
-- `StopEmulatingCurrentThread`
-
-### Simulation Control
-- `RegisterRecordCallbacks`
-- `RequestUnplugInstructions`
-- `ResetMaxInstructionsToEmulate`
-- `ResumeSimulation`
-- `RunCallbackWithSmartContextForCurrentThread`
-- `SetSimulatorOptions`
-- `SubDbgEntry`
-- `TryRegsEmulation`
-
-### TTD Writer Functions
-- `OpenWriter`
-- `TtdWriterAddCustomEvent`
-- `TtdWriterClose`
-- `TtdWriterDumpModuleData`
-- `TtdWriterDumpSnapshot`
-- `TtdWriterGetFileName`
-- `TtdWriterGetState`
-- `TtdWriterGetThrottleState`
-- `TtdWriterOpenState`
-- `TtdWriterResetThrottle`
-- `TtdWriterSetRecordingMode`
-- `TtdWriterStartRecordingCurrentThread`
-- `TtdWriterStopRecordingCurrentThread`
-- `TtdWriterTryPauseRecording`
-
-### Utility Functions
-- `ParametersBlock`
-- `ntdll_InitializeThunk`
-
-### Global Variables
-- `g__constants` - Global constants pointer
-
 ## Building
 
 ### Prerequisites
@@ -141,3 +83,7 @@ call the shim loads the original, repairs the PEB, resolves symbols, and install
 its hooks; from then on every export is forwarded to the original recorder while
 the instrumentation in `src/Hooks.cpp` runs underneath. Behaviour is changed by
 editing those hooks, not the forwarders in `src/Main.cpp`.
+
+## Acknowledgements
+
+@kmx00 - Contributions, brainstorming, identifying that there was an emulation divergence when looking at a protected sample
