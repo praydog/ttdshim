@@ -17,6 +17,7 @@
 #include "TTD/ThreadInfo.hpp"
 #include "TTD/Writer/Thread.hpp"
 #include "InstructionInstrumentation.hpp"
+#include "SCodeInstrumentation.hpp"
 
 #include "Hooks.hpp"
 
@@ -459,7 +460,44 @@ void* trace_lookup_hook(TTD::ttd_vcpu_arch_t* arch, uint64_t unk) {
         //rip = (uintptr_t)last_redirection_start_point + (current_opcode_index * 4);
     }
 
+    struct ttd_scode32_t
+    {
+        uint8_t dst_index;
+        uint8_t reg0;
+        uint8_t reg1;
+        uint8_t s_opcode;
+        uint64_t rip;
+        uint32_t u32_0C;
+    };
+
     auto rip1 = *(uint8_t*)rip;
+
+    if (g_state->execute_op_set_state == nullptr) {
+        g_state->execute_op_set_state = (decltype(g_state->execute_op_set_state))g_state->partial_symbol_lookup("TTD::ScodeHandlerHardcodedFunction").value_or(0);
+        std::cout << fmt::format("[trace_lookup_hook] Found ExecuteOp at {:X}\n", (uintptr_t)g_state->execute_op_set_state);
+    }
+
+    /*if (opcodes_16bit.contains(rip1) && *(uint8_t*)(rip + 1) == 0x90) {
+        std::cout << fmt::format("[trace_lookup_hook] Found xchg eax, r8d! RIP: {:X}, FIXING...\n", rip);
+        auto cpu = ti->pv_ensure_thread_state();
+        ttd_scode32_t scode{};
+        scode.rip = 0;
+        scode.dst_index = 0;
+        scode.reg0 = 0;
+        scode.reg1 = 0;
+        scode.s_opcode = 0;
+        scode.u32_0C = 0;
+
+        ti->BeginGuestOperation();
+
+        auto vregs = cpu->get_registers();
+        auto& regs = vregs->regs;
+        std::swap(regs.rax, regs.r8);
+        regs.rax &= 0xFFFFFFFF;
+        regs.r8 &= 0xFFFFFFFF;
+
+        ti->EndGuestOperation();
+    }*/
 
     // here
     if (opcodes_16bit.contains(rip1) && *(uint8_t*)(rip + 1) == 0x90) {
@@ -570,6 +608,9 @@ void initialize(void* original_dll) {
     std::string header_file_decoders{};
     std::vector<Decoder> decoders{};
 
+    std::string header_file_scode{};
+    std::vector<std::string> scode_functions{};
+
     for (const auto [rva, name] : symbols) try {
         if (ignored_functions.find(name) != ignored_functions.end()) {
             spdlog::info("Ignoring function: {}", name);
@@ -587,6 +628,17 @@ void initialize(void* original_dll) {
             spdlog::info("Found decoder function: {} at {:x}", fn_name, (uintptr_t)original_dll + rva);
             //header_file_decoders += "uint64_t " + name.substr(name.find("IntelDecoderImpl::") + strlen("IntelDecoderImpl::")) + "();\n";
             decoders.push_back({fn_name, name});
+        }
+
+        if (name.contains("TTD::ScodeHandler")) {
+            auto fn_name = name.substr(name.find("TTD::ScodeHandler") + strlen("TTD::ScodeHandler"), name.find_first_of('(') - (name.find("TTD::ScodeHandler") + strlen("TTD::ScodeHandler")));
+            // replace < with _
+            std::replace(fn_name.begin(), fn_name.end(), '<', '_');
+            std::replace(fn_name.begin(), fn_name.end(), '>', '_');
+            std::replace(fn_name.begin(), fn_name.end(), ',', '_');
+            spdlog::info("Found scode function: {} at {:x}", fn_name, (uintptr_t)original_dll + rva);
+            //header_file_scode += "uint64_t " + name.substr(name.find("TTD::ScodeHandler") + strlen("TTD::ScodeHandler")) + "();\n";
+            scode_functions.push_back(fn_name);
         }
 
         if (name.contains("VirtualizeGuestMachineState")) {
@@ -772,6 +824,7 @@ void initialize(void* original_dll) {
 #endif
 
     ttd::instrumentation::install(g_state->inverse_symbol_map);
+    ttd::instrumentation::install_scode_instrumentation(g_state->inverse_symbol_map);
 
     /*g_decoder_hook = safetyhook::create_mid(
         (void*)((uintptr_t)original_dll + 0x20B85),

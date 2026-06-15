@@ -17,7 +17,7 @@ using _QWORD = uint64_t;
 
 struct X64EmulatorRegisters {
     struct regs_internal {
-        _BYTE gap0[104];
+        uint32_t scode_regs[26];
         _QWORD rip;
         _QWORD teb;
         _QWORD qword78;
@@ -214,6 +214,15 @@ struct X64EmulatorRegisters {
     }
 
     void virtualize_state(uint8_t flags);
+
+    template<typename T>
+    T& get_scode_register(size_t index) {
+        if (index >= 16) {
+            throw std::out_of_range("Invalid SCode register index");
+        }
+
+        return *(T**)&regs.scode_regs[index];
+    }
 };
 static constexpr inline size_t X64EmulatorRegisters_size = sizeof(X64EmulatorRegisters);
 static_assert(sizeof(X64EmulatorRegisters) == 0xC80, "X64EmulatorRegisters size mismatch");

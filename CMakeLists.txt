@@ -107,6 +107,8 @@ set(ttdshim_SOURCES
 	"src/Main.cpp"
 	"src/MidHooker.cpp"
 	"src/MidHooker.hpp"
+	"src/SCodeInstrumentation.cpp"
+	"src/SCodeInstrumentation.hpp"
 	"src/State.cpp"
 	"src/State.hpp"
 	"src/TTD/INativeRecordVirtualCpu.cpp"

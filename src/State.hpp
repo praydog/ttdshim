@@ -24,6 +24,9 @@ namespace ttd {
         using HandleFn = void* (*)(uintptr_t rcx, uintptr_t rdx);
         HandleFn handle_int3 = nullptr;
 
+        using ExecuteOpFn = void (*)(void* vcpu, void* vpc);
+        ExecuteOpFn execute_op_set_state = nullptr;
+
         std::optional<uintptr_t> partial_symbol_lookup(const std::string& partial_name) const {
             for (const auto& [name, addr] : inverse_symbol_map) {
                 if (name.find(partial_name) != std::string::npos) {

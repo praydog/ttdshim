@@ -51,4 +51,8 @@ struct Instruction 0x118 {
 struct X64EmulatorRegisters 0xC80 {
     void* rip @ 0x68
 }
+
+struct VirtualCPU 0xF5280 {
+    X64EmulatorRegisters regs @ 0xF1280
+};
 }
