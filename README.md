@@ -86,4 +86,4 @@ editing those hooks, not the forwarders in `src/Main.cpp`.
 
 ## Acknowledgements
 
-@kmx00 - Contributions, brainstorming, identifying that there was an emulation divergence when looking at a protected sample
+[@kmx00](https://github.com/kmx00) - Contributions, brainstorming, identifying that there was an emulation divergence when looking at a protected sample
